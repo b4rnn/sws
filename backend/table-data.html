@@ -1,0 +1,1558 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>QloudDash | Responsive Bootstrap 4 Admin Dashboard Template</title>
+      
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+      <link rel="stylesheet" href="../assets/css/backend-plugin.min.css">
+      <link rel="stylesheet" href="../assets/css/backend.css?v=1.0.0">
+      <link rel="stylesheet" href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+      <link rel="stylesheet" href="../assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      <link rel="stylesheet" href="../assets/vendor/remixicon/fonts/remixicon.css">
+      <link rel="stylesheet" href="../assets/vendor/@icon/dripicons/dripicons.css">
+      
+      <link rel='stylesheet' href='../assets/vendor/fullcalendar/core/main.css' />
+      <link rel='stylesheet' href='../assets/vendor/fullcalendar/daygrid/main.css' />
+      <link rel='stylesheet' href='../assets/vendor/fullcalendar/timegrid/main.css' />
+      <link rel='stylesheet' href='../assets/vendor/fullcalendar/list/main.css' />
+      <link rel="stylesheet" href="../assets/vendor/mapbox/mapbox-gl.css">  </head>
+  <body class="color-light ">
+    <!-- loader Start -->
+    <div id="loading">
+          <div id="loading-center">
+          </div>
+    </div>
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+      
+      <div class="two-sidebar sidebar-1  sidebar-default ">
+          <div class="iq-sidebar-small">
+              <div class="sidebar-top">
+                  <div class="iq-sidebar-small-logo">
+                      <a href="../backend/index.html">
+                      <img src="../assets/images/logo.png" class="img-fluid" alt="logo">
+                      </a>
+                  </div>
+              </div>
+              <div class="sidebar-bottom">
+                  <div class="sidebar-menu-icon">
+                      <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
+                          <li class="nav-item d-block active">
+                              <a class="nav-link active" data-toggle="pill" href="#project-pan" role="tab" aria-selected="false">                            
+                                  <svg class="svg-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                      <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                                  </svg>
+                              </a>
+                          </li>
+                          <li class="nav-item d-block">
+                              <a class="nav-link" data-toggle="pill" href="#droplets-pan" role="tab" aria-selected="false">                            
+                                  <svg class="svg-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                      <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                      <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                                  </svg>
+                              </a>
+                          </li>
+                          <li class="nav-item d-block">
+                              <a class="nav-link" data-togagle="pill" href="../backend/page-discover.html" role="tab" aria-selected="false">                            
+                                  <svg class="svg-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                      <path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2h-1.528A6 6 0 004 9.528V4z" />
+                                      <path fill-rule="evenodd" d="M8 10a4 4 0 00-3.446 6.032l-1.261 1.26a1 1 0 101.414 1.415l1.261-1.261A4 4 0 108 10zm-2 4a2 2 0 114 0 2 2 0 01-4 0z" clip-rule="evenodd" />
+                                  </svg>
+                              </a>
+                          </li>
+                          <li class="nav-item d-block">
+                              <a class="nav-link" data-toggle="pill" href="#account" role="tab" aria-selected="false">                            
+                                  <svg class="svg-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                      <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                  </svg>
+                              </a>
+                          </li>
+                          <li class="nav-item d-block mb-0">
+                              <a class="nav-link" data-toggle="pill" href="#other-pages" role="tab" aria-selected="false">                            
+                                  <svg class="svg-icon" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                      <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" />
+                                      <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+                                  </svg>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="iq-sidebar">
+              <div class="data-scrollbar" data-scroll="1">
+                  <nav class="iq-sidebar-menu">
+                      <div class="tab-content">
+                          <div class="tab-pane fade active show" id="project-pan" role="tabpanel">                        
+                              <div class="iq-sidebar-top">
+                                  <div class="top-menu-icon">
+                                      <h4 class="text-uppercase">Your Projects</h4>
+                                  </div>
+                              </div>
+                              <div class="mb-3 px-3">                            
+                                  <a href="#" class="btn btn-primary btn-new w-100" data-toggle="modal" data-target="#new-project"><i class="las la-plus newbtn-icon"></i>New Project</a>
+                              </div>
+                              <ul id="project" class="iq-menu list-inline m-0">
+                                  <li class=" ">                            
+                                      <a href="../backend/page-demo-project.html">
+                                          <span>Demo Project</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-wordpress-project.html">
+                                          <span>Wordpress Project</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/index.html">
+                                          <span>Task Management</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-theme-design.html">
+                                          <span>Themes design</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-update-process.html">
+                                          <span>Update Process</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-new-plugins.html">
+                                          <span>New Plugins</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-graphics-design.html">
+                                          <span>Graphics Design</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-frontend-developer.html">
+                                          <span>Front-end Developer</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="tab-pane fade" id="droplets-pan" role="tabpanel">
+                              <div class="iq-sidebar-top">
+                                  <div class="top-menu-icon">
+                                      <h4 class="text-uppercase">Manage</h4>
+                                  </div>
+                              </div>
+                              <ul id="droplets" class="iq-menu list-inline m-0">        
+                                  <li class=" ">                            
+                                      <a href="../backend/page-droplets.html">
+                                          <span>Droplets</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-kubernetes.html">
+                                          <span>Kubernetes</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-spaces.html">
+                                          <span>Spaces</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-images.html">
+                                          <span>Images</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-networking.html">
+                                          <span>Networking</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-monitoring.html">
+                                          <span>Monitoring</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">                            
+                                      <a href="../backend/page-apps.html">
+                                          <span>Apps</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="tab-pane fade" id="discover" role="tabpanel">
+                              
+                          </div>
+                          <div class="tab-pane fade" id="account" role="tabpanel">
+                              <div class="iq-sidebar-top">
+                                  <div class="top-menu-icon">
+                                      <h4 class="text-uppercase">Account</h4>
+                                  </div>
+                              </div>
+                              <ul id="accounts" class="iq-menu list-inline m-0">
+                                  <li class=" ">
+                                      <a id="id-team" href="../backend/page-account.html" data-extra-toggle="tab" data-target="#team">
+                                          <span>Team</span>
+                                      </a>
+                                  </li>
+                                  <li class="">                            
+                                      <a id="id-billing" href="../backend/page-account.html" data-extra-toggle="tab" data-target="#billing">
+                                          <span>Billing</span>
+                                      </a>
+                                  </li>
+                                  <li class="">                            
+                                      <a id="id-security" href="../backend/page-account.html" data-extra-toggle="tab" data-target="#security">
+                                          <span>Security</span>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="tab-pane fade" id="other-pages" role="tabpanel">
+                              <div class="iq-sidebar-top">
+                                  <div class="top-menu-icon">
+                                      <h4 class="text-uppercase">Other Pages</h4>
+                                  </div>
+                              </div>
+                              <ul id="otherpage" class="iq-menu list-inline m-0">
+                                  <li class=" ">
+                                      <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>User Details</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="user" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../app/user-profile.html">
+                                                      <span>User Profile</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../app/user-add.html">
+                                                      <span>User Add</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../app/user-list.html">
+                                                      <span>User List</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class=" ">
+                                      <a href="#ui" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>UI Elements</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="ui" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../backend/ui-avatars.html">
+                                                      <span>Avatars</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-alerts.html">
+                                                      <span>Alerts</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-badges.html">
+                                                      <span>Badges</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-breadcrumb.html">
+                                                      <span>Breadcrumb</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-buttons.html">
+                                                      <span>Buttons</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-buttons-group.html">
+                                                      <span>Buttons Group</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-boxshadow.html">
+                                                      <span>Box Shadow</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-colors.html">
+                                                      <span>Colors</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-cards.html">
+                                                      <span>Cards</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-carousel.html">
+                                                      <span>Carousel</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-grid.html">
+                                                      <span>Grid</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-helper-classes.html">
+                                                      <span>Helper classes</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-images.html">
+                                                      <span>Images</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-list-group.html">
+                                                      <span>list Group</span>
+                                                  </a>
+                                              </li>
+                                              <li  class="">
+                                                  <a href="../backend/ui-media-object.html">
+                                                      <span>Media</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-modal.html">
+                                                      <span>Modal</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-notifications.html">
+                                                      <span>Notifications</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-pagination.html">
+                                                      <span>Pagination</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-popovers.html">
+                                                      <span>Popovers</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-progressbars.html">
+                                                      <span>Progressbars</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-typography.html">
+                                                      <span>Typography</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-tabs.html">
+                                                      <span>Tabs</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-tooltips.html">
+                                                      <span>Tooltips</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/ui-embed-video.html">
+                                                      <span>Video</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class=" ">
+                                      <a href="#auth" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>Authentication</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="auth" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../backend/auth-sign-in.html">
+                                                      <span>Login</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/auth-sign-up.html">
+                                                      <span>Register</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/auth-recoverpw.html">
+                                                      <span>Recover Password</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/auth-confirm-mail.html">
+                                                      <span>Confirm Mail</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/auth-lock-screen.html">
+                                                      <span>Lock Screen</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class="">
+                                      <a href="#form" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                                          <span>Forms</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="form" class="iq-submenu collapse" data-parent="#otherpage">
+                                          <li class="">
+                                              <a href="../backend/form-layout.html">
+                                                  <span class="">Form Elements</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-input-group.html" class="svg-icon">
+                                                 <span class="">Form Input</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-validation.html" class="svg-icon">
+                                                  <span class="">Form Validation</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-switch.html" class="svg-icon">
+                                                  <span class="">Form Switch</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-chechbox.html" class="svg-icon">
+                                                  <span class="">Form Checkbox</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-radio.html" class="svg-icon">
+                                                  <span class="">Form Radio</span>
+                                              </a>
+                                          </li>
+                                          <li class="">
+                                              <a href="../backend/form-textarea.html" class="svg-icon">
+                                                  <span class="">Form Textarea</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li class=" ">
+                                      <a href="#table" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>Table</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="table" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../backend/tables-basic.html">
+                                                      <span>Basic Tables</span>
+                                                  </a>
+                                              </li>
+                                              <li class="active">
+                                                  <a href="../backend/table-data.html">
+                                                      <span>Data Table</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/table-tree.html">
+                                                      <span>Table Tree</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class=" ">
+                                      <a href="#pricing" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>Pricing</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="pricing" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../backend/pricing.html">
+                                                      <span>Pricing 1</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/pricing-2.html">
+                                                      <span>Pricing 2</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class="">
+                                      <a href="../backend/pages-invoice.html" class="svg-icon">
+                                          <span>Invoice</span>
+                                      </a>
+                                  </li>
+                                  <li class=" ">
+                                      <a href="#pages-error" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <span>Error</span>
+                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                                      </a>
+                                      <ul id="pages-error" class="iq-submenu collapse" data-parent="#otherpage">
+                                              <li class="">
+                                                  <a href="../backend/pages-error.html">
+                                                      <span>Error 404</span>
+                                                  </a>
+                                              </li>
+                                              <li class="">
+                                                  <a href="../backend/pages-error-500.html">
+                                                      <span>Error 500</span>
+                                                  </a>
+                                              </li>
+                                      </ul>
+                                  </li>
+                                  <li class="">
+                                          <a href="../backend/pages-blank-page.html">
+                                              <span>Blank Page</span>
+                                          </a>
+                                  </li>
+                                  <li class="">
+                                          <a href="../backend/pages-maintenance.html">
+                                              <span>Maintenance</span>
+                                          </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </nav>
+                  <div class="p-3"></div>
+              </div>
+          </div>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="new-project" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <div class="popup text-left">
+                          <div class="d-flex align-items-top justify-content-between">                        
+                              <h4 class="mb-3 text-primary">Create New Project</h4>
+                              <a href="#" class="text-primary" data-dismiss="modal"><i class="ri-close-line font-size-20"></i></a>
+                          </div>
+                          <div class="content">
+                              <form>
+                                  <div class="row">
+                                      <div class="col-lg-12">
+                                      <div class="form-group mb-4">
+                                          <label>Enter Project Name *</label>
+                                          <input type="text" class="form-control" placeholder="Enter Name">
+                                      </div>
+                                      </div>
+                                      <div class="col-lg-12">
+                                      <div class="form-group mb-4">
+                                          <label for="exampleFormControlTextarea1">Add Description *</label>
+                                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Enter Description of project"></textarea>
+                                      </div>
+                                      </div>
+                                      <div class="col-lg-12">
+                                          <div class="form-group mb-4">
+                                              <label>Purpose *</label>
+                                              <select name="type" class="selectpicker form-control" data-style="py-0">
+                                                  <option>Select Purpose..</option>
+                                                  <option>Purpose 1</option>
+                                                  <option>Purpose 2</option>
+                                                  <option>Purpose 3</option>
+                                                  <option>Purpose 4</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                      <div class="col-lg-12">  
+                                          <div class="d-block text-center mt-3">
+                                              <div class="btn btn-primary" data-dismiss="modal">Create Project</div>
+                                          </div>                                  
+                                      </div>
+                                  </div>
+                              </form> 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- End Modal -->      <div class="iq-top-navbar">
+          <div class="iq-navbar-custom">
+              <nav class="navbar navbar-expand-lg navbar-light p-0">
+                  <div class="iq-search-bar device-search">
+                      <form>
+                          <div class="input-prepend input-append">
+                              <div class="btn-group">
+                                  <label class="dropdown-toggle searchbox" data-toggle="dropdown">
+                                  <input class="dropdown-toggle search-query text search-input" type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
+                                  <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                                  <span class="caret"><!--icon--></span>
+                                  </label>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="#"><div class="item">DropLets</div></a></li>
+                                      <li><a href="#"><div class="item">Kubernets</div></a></li>
+                                      <li><a href="#"><div class="item">Apps</div></a></li>
+                                      <li><a href="#"><div class="item">Images</div></a></li>
+                                      <li><a href="#"><div class="item">Networking</div></a></li>
+                                      <li><a href="#"><div class="item">Spaces</div></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="create-dropdown nav-icon dropdown mr-2">
+                      <a href="#" class="search-toggle dropdown-toggle btn btn-primary text-white add-btn"
+                          id="dropdownMenuButton002" data-toggle="dropdown" aria-haspopup="true"
+                          aria-expanded="false">
+                          Create<i class="ri-arrow-down-s-line arrow pl-2"></i>
+                      </a>
+                      <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton002">
+                          <div class="card shadow-none m-0">
+                              <div class="card-body p-0">
+                                  <a href="../backend/page-droplets.html" class="">
+                                      <div class="d-flex align-items-center p-3 border-bottom">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              D
+                                          </div>
+                                          <div>
+                                              <h6>DropLets</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <a href="../backend/page-kubernetes.html" class="">
+                                      <div class="d-flex align-items-center p-3 border-bottom">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              K
+                                          </div>
+                                          <div>
+                                              <h6>Kubernets</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <a href="../backend/page-apps.html" class="">
+                                      <div class="d-flex align-items-center p-3 border-bottom">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              A
+                                          </div>
+                                          <div>
+                                              <h6>Apps</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <a href="../backend/page-images.html" class="">
+                                      <div class="d-flex align-items-center p-3 border-bottom">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              I
+                                          </div>
+                                          <div>
+                                              <h6>Images</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <a href="../backend/page-networking.html" class="">
+                                      <div class="d-flex align-items-center p-3 border-bottom">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              N
+                                          </div>
+                                          <div>
+                                              <h6>Networking</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <a href="../backend/page-spaces.html" class="">
+                                      <div class="d-flex align-items-center p-3">
+                                          <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                              S
+                                          </div>
+                                          <div>
+                                              <h6>Spaces</h6>
+                                              <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse"
+                          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                          aria-label="Toggle navigation">
+                          <i class="ri-menu-3-line"></i>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                              <li class="nav-item nav-icon icon-dropdown dropdown">
+                                  <a href="#" class="search-toggle dropdown-toggle btn btn-primary text-white add-btn"
+                                      id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true"
+                                      aria-expanded="false">
+                                      Create<i class="ri-arrow-down-s-line arrow pl-2"></i>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                      <div class="card shadow-none m-0">
+                                          <div class="card-body p-0">
+                                              <a href="../backend/page-droplets.html" class="">
+                                                  <div class="d-flex align-items-center p-3 border-bottom">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          D
+                                                      </div>
+                                                      <div>
+                                                          <h6>DropLets</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                              <a href="../backend/page-kubernetes.html" class="">
+                                                  <div class="d-flex align-items-center p-3 border-bottom">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          K
+                                                      </div>
+                                                      <div>
+                                                          <h6>Kubernets</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                              <a href="../backend/page-apps.html" class="">
+                                                  <div class="d-flex align-items-center p-3 border-bottom">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          A
+                                                      </div>
+                                                      <div>
+                                                          <h6>Apps</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                              <a href="../backend/page-images.html" class="">
+                                                  <div class="d-flex align-items-center p-3 border-bottom">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          I
+                                                      </div>
+                                                      <div>
+                                                          <h6>Images</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                              <a href="../backend/page-networking.html" class="">
+                                                  <div class="d-flex align-items-center p-3 border-bottom">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          N
+                                                      </div>
+                                                      <div>
+                                                          <h6>Networking</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                              <a href="../backend/page-spaces.html" class="">
+                                                  <div class="d-flex align-items-center p-3">
+                                                      <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                          S
+                                                      </div>
+                                                      <div>
+                                                          <h6>Spaces</h6>
+                                                          <p class="mb-0 text-body font-size-14">Create cloud server</p>
+                                                      </div>
+                                                  </div>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon search-content">
+                                  <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
+                                      aria-haspopup="true" aria-expanded="false">
+                                      <i class="ri-search-line"></i>
+                                  </a>
+                                  <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                      <form action="#" class="searchbox p-2">
+                                          <div class="form-group mb-0 position-relative">
+                                              <input type="text" class="text search-input font-size-12"
+                                                  placeholder="type here to search...">
+                                              <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                          </div>
+                                      </form>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon dropdown">
+                                  <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2"
+                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="24px" width="24px">
+                                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                          </svg>
+                                      <span class="bg-primary"></span>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                      <div class="card shadow-none m-0">
+                                          <div class="card-body p-0 ">
+                                              <div class="cust-title p-3">
+                                                  <div class="d-flex align-items-center justify-content-between">
+                                                      <h5 class="mb-0">All Messages</h5>
+                                                      <a class="badge badge-primary badge-card" href="#">3</a>
+                                                  </div>
+                                              </div>
+                                              <div class="px-3 pt-0 pb-0 sub-card">
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3 border-bottom">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/01.jpg" alt="01">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Emma Watson</h6>
+                                                                  <small class="text-dark"><b>12 : 47 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3 border-bottom">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/02.jpg" alt="02">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Ashlynn Franci</h6>
+                                                                  <small class="text-dark"><b>11 : 30 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/03.jpg" alt="03">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Kianna Carder</h6>
+                                                                  <small class="text-dark"><b>11 : 21 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
+                                                  role="button">
+                                                  View All
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon dropdown">
+                                  <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton"
+                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 20 20" fill="currentColor">
+                                          <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                                      </svg>
+                                      <span class="bg-primary "></span>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <div class="card shadow-none m-0">
+                                          <div class="card-body p-0 ">
+                                              <div class="cust-title p-3">
+                                                  <div class="d-flex align-items-center justify-content-between">
+                                                      <h5 class="mb-0">Notifications</h5>
+                                                      <a class="badge badge-primary badge-card" href="#">3</a>
+                                                  </div>
+                                              </div>
+                                              <div class="px-3 pt-0 pb-0 sub-card">
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3 border-bottom">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/01.jpg" alt="01">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Emma Watson</h6>
+                                                                  <small class="text-dark"><b>12 : 47 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3 border-bottom">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/02.jpg" alt="02">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Ashlynn Franci</h6>
+                                                                  <small class="text-dark"><b>11 : 30 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                                  <a href="#" class="iq-sub-card">
+                                                      <div class="media align-items-center cust-card py-3">
+                                                          <div class="">
+                                                              <img class="avatar-50 rounded-small"
+                                                                  src="../assets/images/user/03.jpg" alt="03">
+                                                          </div>
+                                                          <div class="media-body ml-3">
+                                                              <div class="d-flex align-items-center justify-content-between">
+                                                                  <h6 class="mb-0">Kianna Carder</h6>
+                                                                  <small class="text-dark"><b>11 : 21 pm</b></small>
+                                                              </div>
+                                                              <small class="mb-0">Lorem ipsum dolor sit amet</small>
+                                                          </div>
+                                                      </div>
+                                                  </a>
+                                              </div>
+                                              <a class="right-ic btn btn-primary btn-block position-relative p-2" href="#"
+                                                  role="button">
+                                                  View All
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2 border-left">
+                                  <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
+                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <div class="d-flex align-items-center">
+                                          <img src="../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user">
+                                          <div class="caption ml-3">
+                                              <h6 class="mb-1">Kristin Watson</h6>
+                                              <p class="text-body mb-0">kristin@gmail.com</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <div class="card shadow-none m-0">
+                                          <div class="card-body p-0 text-center">
+                                              <div class="media-body profile-detail text-center">
+                                                  <img src="../assets/images/page-img/profile-bg.jpg" alt="profile-bg"
+                                                      class="rounded-top img-fluid mb-4">
+                                                  <img src="../assets/images/user/1.png" alt="profile-img"
+                                                      class="rounded profile-img img-fluid avatar-70">
+                                              </div>
+                                              <div class="p-3">
+                                                  <h5 class="mb-1">JoanDuo@property.com</h5>
+                                                  <p class="mb-0">Since 10 march, 2020</p>
+                                                  <div class="d-flex align-items-center justify-content-center mt-3">
+                                                      <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
+                                                      <a href="../backend/auth-sign-in.html" class="btn border">Sign Out</a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </nav>
+          </div>
+      </div>
+      <div class="modal fade" id="new-order" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-body">
+                      <div class="popup text-left">
+                          <h4 class="mb-3">New Order</h4>
+                          <div class="content create-workform bg-body">
+                              <div class="pb-3">
+                                  <label class="mb-2">Email</label>
+                                  <input type="text" class="form-control" placeholder="Enter Name or Email">
+                              </div>
+                              <div class="col-lg-12 mt-4">
+                                  <div class="d-flex flex-wrap align-items-ceter justify-content-center">
+                                      <div class="btn btn-primary mr-4" data-dismiss="modal">Cancel</div>
+                                      <div class="btn btn-outline-primary" data-dismiss="modal">Create</div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>      <div class="content-page">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="card">
+                  <div class="card-header d-flex justify-content-between">
+                     <div class="header-title">
+                        <h4 class="card-title">Bootstrap Datatables</h4>
+                     </div>
+                  </div>
+                  <div class="card-body custom-card-space">
+                     <p>Images in Bootstrap are made responsive with <code>.img-fluid</code>. <code>max-width: 100%;</code> and <code>height: auto;</code> are applied to the image so that it scales with the parent element.</p>
+                     <div class="table-responsive tbl-server-info py-3 rounded">
+                        <table id="datatable" class="table data-table table-striped">
+                           <thead>
+                              <tr class="ligth">
+                                 <th>Name</th>
+                                 <th>Position</th>
+                                 <th>Office</th>
+                                 <th>Age</th>
+                                 <th>Start date</th>
+                                 <th>Salary</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>Tiger Nixon</td>
+                                 <td>System Architect</td>
+                                 <td>Edinburgh</td>
+                                 <td>61</td>
+                                 <td>2011/04/25</td>
+                                 <td>$320,800</td>
+                              </tr>
+                              <tr>
+                                 <td>Garrett Winters</td>
+                                 <td>Accountant</td>
+                                 <td>Tokyo</td>
+                                 <td>63</td>
+                                 <td>2011/07/25</td>
+                                 <td>$170,750</td>
+                              </tr>
+                              <tr>
+                                 <td>Ashton Cox</td>
+                                 <td>Junior Technical Author</td>
+                                 <td>San Francisco</td>
+                                 <td>66</td>
+                                 <td>2009/01/12</td>
+                                 <td>$86,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Cedric Kelly</td>
+                                 <td>Senior Javascript Developer</td>
+                                 <td>Edinburgh</td>
+                                 <td>22</td>
+                                 <td>2012/03/29</td>
+                                 <td>$433,060</td>
+                              </tr>
+                              <tr>
+                                 <td>Airi Satou</td>
+                                 <td>Accountant</td>
+                                 <td>Tokyo</td>
+                                 <td>33</td>
+                                 <td>2008/11/28</td>
+                                 <td>$162,700</td>
+                              </tr>
+                              <tr>
+                                 <td>Brielle Williamson</td>
+                                 <td>Integration Specialist</td>
+                                 <td>New York</td>
+                                 <td>61</td>
+                                 <td>2012/12/02</td>
+                                 <td>$372,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Herrod Chandler</td>
+                                 <td>Sales Assistant</td>
+                                 <td>San Francisco</td>
+                                 <td>59</td>
+                                 <td>2012/08/06</td>
+                                 <td>$137,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Rhona Davidson</td>
+                                 <td>Integration Specialist</td>
+                                 <td>Tokyo</td>
+                                 <td>55</td>
+                                 <td>2010/10/14</td>
+                                 <td>$327,900</td>
+                              </tr>
+                              <tr>
+                                 <td>Colleen Hurst</td>
+                                 <td>Javascript Developer</td>
+                                 <td>San Francisco</td>
+                                 <td>39</td>
+                                 <td>2009/09/15</td>
+                                 <td>$205,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Sonya Frost</td>
+                                 <td>Software Engineer</td>
+                                 <td>Edinburgh</td>
+                                 <td>23</td>
+                                 <td>2008/12/13</td>
+                                 <td>$103,600</td>
+                              </tr>
+                              <tr>
+                                 <td>Jena Gaines</td>
+                                 <td>Office Manager</td>
+                                 <td>London</td>
+                                 <td>30</td>
+                                 <td>2008/12/19</td>
+                                 <td>$90,560</td>
+                              </tr>
+                              <tr>
+                                 <td>Quinn Flynn</td>
+                                 <td>Support Lead</td>
+                                 <td>Edinburgh</td>
+                                 <td>22</td>
+                                 <td>2013/03/03</td>
+                                 <td>$342,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Charde Marshall</td>
+                                 <td>Regional Director</td>
+                                 <td>San Francisco</td>
+                                 <td>36</td>
+                                 <td>2008/10/16</td>
+                                 <td>$470,600</td>
+                              </tr>
+                              <tr>
+                                 <td>Haley Kennedy</td>
+                                 <td>Senior Marketing Designer</td>
+                                 <td>London</td>
+                                 <td>43</td>
+                                 <td>2012/12/18</td>
+                                 <td>$313,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Tatyana Fitzpatrick</td>
+                                 <td>Regional Director</td>
+                                 <td>London</td>
+                                 <td>19</td>
+                                 <td>2010/03/17</td>
+                                 <td>$385,750</td>
+                              </tr>
+                              <tr>
+                                 <td>Michael Silva</td>
+                                 <td>Marketing Designer</td>
+                                 <td>London</td>
+                                 <td>66</td>
+                                 <td>2012/11/27</td>
+                                 <td>$198,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Paul Byrd</td>
+                                 <td>Chief Financial Officer (CFO)</td>
+                                 <td>New York</td>
+                                 <td>64</td>
+                                 <td>2010/06/09</td>
+                                 <td>$725,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Gloria Little</td>
+                                 <td>Systems Administrator</td>
+                                 <td>New York</td>
+                                 <td>59</td>
+                                 <td>2009/04/10</td>
+                                 <td>$237,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Bradley Greer</td>
+                                 <td>Software Engineer</td>
+                                 <td>London</td>
+                                 <td>41</td>
+                                 <td>2012/10/13</td>
+                                 <td>$132,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Dai Rios</td>
+                                 <td>Personnel Lead</td>
+                                 <td>Edinburgh</td>
+                                 <td>35</td>
+                                 <td>2012/09/26</td>
+                                 <td>$217,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Jenette Caldwell</td>
+                                 <td>Development Lead</td>
+                                 <td>New York</td>
+                                 <td>30</td>
+                                 <td>2011/09/03</td>
+                                 <td>$345,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Yuri Berry</td>
+                                 <td>Chief Marketing Officer (CMO)</td>
+                                 <td>New York</td>
+                                 <td>40</td>
+                                 <td>2009/06/25</td>
+                                 <td>$675,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Caesar Vance</td>
+                                 <td>Pre-Sales Support</td>
+                                 <td>New York</td>
+                                 <td>21</td>
+                                 <td>2011/12/12</td>
+                                 <td>$106,450</td>
+                              </tr>
+                              <tr>
+                                 <td>Doris Wilder</td>
+                                 <td>Sales Assistant</td>
+                                 <td>Sydney</td>
+                                 <td>23</td>
+                                 <td>2010/09/20</td>
+                                 <td>$85,600</td>
+                              </tr>
+                              <tr>
+                                 <td>Angelica Ramos</td>
+                                 <td>Chief Executive Officer (CEO)</td>
+                                 <td>London</td>
+                                 <td>47</td>
+                                 <td>2009/10/09</td>
+                                 <td>$1,200,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Gavin Joyce</td>
+                                 <td>Developer</td>
+                                 <td>Edinburgh</td>
+                                 <td>42</td>
+                                 <td>2010/12/22</td>
+                                 <td>$92,575</td>
+                              </tr>
+                              <tr>
+                                 <td>Jennifer Chang</td>
+                                 <td>Regional Director</td>
+                                 <td>Singapore</td>
+                                 <td>28</td>
+                                 <td>2010/11/14</td>
+                                 <td>$357,650</td>
+                              </tr>
+                              <tr>
+                                 <td>Brenden Wagner</td>
+                                 <td>Software Engineer</td>
+                                 <td>San Francisco</td>
+                                 <td>28</td>
+                                 <td>2011/06/07</td>
+                                 <td>$206,850</td>
+                              </tr>
+                              <tr>
+                                 <td>Fiona Green</td>
+                                 <td>Chief Operating Officer (COO)</td>
+                                 <td>San Francisco</td>
+                                 <td>48</td>
+                                 <td>2010/03/11</td>
+                                 <td>$850,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Shou Itou</td>
+                                 <td>Regional Marketing</td>
+                                 <td>Tokyo</td>
+                                 <td>20</td>
+                                 <td>2011/08/14</td>
+                                 <td>$163,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Michelle House</td>
+                                 <td>Integration Specialist</td>
+                                 <td>Sydney</td>
+                                 <td>37</td>
+                                 <td>2011/06/02</td>
+                                 <td>$95,400</td>
+                              </tr>
+                              <tr>
+                                 <td>Suki Burks</td>
+                                 <td>Developer</td>
+                                 <td>London</td>
+                                 <td>53</td>
+                                 <td>2009/10/22</td>
+                                 <td>$114,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Prescott Bartlett</td>
+                                 <td>Technical Author</td>
+                                 <td>London</td>
+                                 <td>27</td>
+                                 <td>2011/05/07</td>
+                                 <td>$145,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Gavin Cortez</td>
+                                 <td>Team Leader</td>
+                                 <td>San Francisco</td>
+                                 <td>22</td>
+                                 <td>2008/10/26</td>
+                                 <td>$235,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Martena Mccray</td>
+                                 <td>Post-Sales support</td>
+                                 <td>Edinburgh</td>
+                                 <td>46</td>
+                                 <td>2011/03/09</td>
+                                 <td>$324,050</td>
+                              </tr>
+                              <tr>
+                                 <td>Unity Butler</td>
+                                 <td>Marketing Designer</td>
+                                 <td>San Francisco</td>
+                                 <td>47</td>
+                                 <td>2009/12/09</td>
+                                 <td>$85,675</td>
+                              </tr>
+                              <tr>
+                                 <td>Howard Hatfield</td>
+                                 <td>Office Manager</td>
+                                 <td>San Francisco</td>
+                                 <td>51</td>
+                                 <td>2008/12/16</td>
+                                 <td>$164,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Hope Fuentes</td>
+                                 <td>Secretary</td>
+                                 <td>San Francisco</td>
+                                 <td>41</td>
+                                 <td>2010/02/12</td>
+                                 <td>$109,850</td>
+                              </tr>
+                              <tr>
+                                 <td>Vivian Harrell</td>
+                                 <td>Financial Controller</td>
+                                 <td>San Francisco</td>
+                                 <td>62</td>
+                                 <td>2009/02/14</td>
+                                 <td>$452,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Timothy Mooney</td>
+                                 <td>Office Manager</td>
+                                 <td>London</td>
+                                 <td>37</td>
+                                 <td>2008/12/11</td>
+                                 <td>$136,200</td>
+                              </tr>
+                              <tr>
+                                 <td>Jackson Bradshaw</td>
+                                 <td>Director</td>
+                                 <td>New York</td>
+                                 <td>65</td>
+                                 <td>2008/09/26</td>
+                                 <td>$645,750</td>
+                              </tr>
+                              <tr>
+                                 <td>Olivia Liang</td>
+                                 <td>Support Engineer</td>
+                                 <td>Singapore</td>
+                                 <td>64</td>
+                                 <td>2011/02/03</td>
+                                 <td>$234,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Bruno Nash</td>
+                                 <td>Software Engineer</td>
+                                 <td>London</td>
+                                 <td>38</td>
+                                 <td>2011/05/03</td>
+                                 <td>$163,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Sakura Yamamoto</td>
+                                 <td>Support Engineer</td>
+                                 <td>Tokyo</td>
+                                 <td>37</td>
+                                 <td>2009/08/19</td>
+                                 <td>$139,575</td>
+                              </tr>
+                              <tr>
+                                 <td>Thor Walton</td>
+                                 <td>Developer</td>
+                                 <td>New York</td>
+                                 <td>61</td>
+                                 <td>2013/08/11</td>
+                                 <td>$98,540</td>
+                              </tr>
+                              <tr>
+                                 <td>Finn Camacho</td>
+                                 <td>Support Engineer</td>
+                                 <td>San Francisco</td>
+                                 <td>47</td>
+                                 <td>2009/07/07</td>
+                                 <td>$87,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Serge Baldwin</td>
+                                 <td>Data Coordinator</td>
+                                 <td>Singapore</td>
+                                 <td>64</td>
+                                 <td>2012/04/09</td>
+                                 <td>$138,575</td>
+                              </tr>
+                              <tr>
+                                 <td>Zenaida Frank</td>
+                                 <td>Software Engineer</td>
+                                 <td>New York</td>
+                                 <td>63</td>
+                                 <td>2010/01/04</td>
+                                 <td>$125,250</td>
+                              </tr>
+                              <tr>
+                                 <td>Zorita Serrano</td>
+                                 <td>Software Engineer</td>
+                                 <td>San Francisco</td>
+                                 <td>56</td>
+                                 <td>2012/06/01</td>
+                                 <td>$115,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Jennifer Acosta</td>
+                                 <td>Junior Javascript Developer</td>
+                                 <td>Edinburgh</td>
+                                 <td>43</td>
+                                 <td>2013/02/01</td>
+                                 <td>$75,650</td>
+                              </tr>
+                              <tr>
+                                 <td>Cara Stevens</td>
+                                 <td>Sales Assistant</td>
+                                 <td>New York</td>
+                                 <td>46</td>
+                                 <td>2011/12/06</td>
+                                 <td>$145,600</td>
+                              </tr>
+                              <tr>
+                                 <td>Hermione Butler</td>
+                                 <td>Regional Director</td>
+                                 <td>London</td>
+                                 <td>47</td>
+                                 <td>2011/03/21</td>
+                                 <td>$356,250</td>
+                              </tr>
+                              <tr>
+                                 <td>Lael Greer</td>
+                                 <td>Systems Administrator</td>
+                                 <td>London</td>
+                                 <td>21</td>
+                                 <td>2009/02/27</td>
+                                 <td>$103,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Jonas Alexander</td>
+                                 <td>Developer</td>
+                                 <td>San Francisco</td>
+                                 <td>30</td>
+                                 <td>2010/07/14</td>
+                                 <td>$86,500</td>
+                              </tr>
+                              <tr>
+                                 <td>Shad Decker</td>
+                                 <td>Regional Director</td>
+                                 <td>Edinburgh</td>
+                                 <td>51</td>
+                                 <td>2008/11/13</td>
+                                 <td>$183,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Michael Bruce</td>
+                                 <td>Javascript Developer</td>
+                                 <td>Singapore</td>
+                                 <td>29</td>
+                                 <td>2011/06/27</td>
+                                 <td>$183,000</td>
+                              </tr>
+                              <tr>
+                                 <td>Donna Snider</td>
+                                 <td>Customer Support</td>
+                                 <td>New York</td>
+                                 <td>27</td>
+                                 <td>2011/01/25</td>
+                                 <td>$112,000</td>
+                              </tr>
+                           </tbody>
+                           <tfoot>
+                              <tr>
+                                 <th>Name</th>
+                                 <th>Position</th>
+                                 <th>Office</th>
+                                 <th>Age</th>
+                                 <th>Start date</th>
+                                 <th>Salary</th>
+                              </tr>
+                           </tfoot>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+    </div>
+    <!-- Wrapper End-->
+    <footer class="iq-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item"><a href="../backend/privacy-policy.html">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="../backend/terms-of-service.html">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">QloudDash</a>.
+                    </div>
+                </div>
+        </div>
+    </footer>
+    <!-- Backend Bundle JavaScript -->
+    <script src="../assets/js/backend-bundle.min.js"></script>
+    
+    <!-- Flextree Javascript-->
+    <script src="../assets/js/flex-tree.min.js"></script>
+    <script src="../assets/js/tree.js"></script>
+    
+    <!-- Table Treeview JavaScript -->
+    <script src="../assets/js/table-treeview.js"></script>
+    
+    <!-- Masonary Gallery Javascript -->
+    <script src="../assets/js/masonry.pkgd.min.js"></script>
+    <script src="../assets/js/imagesloaded.pkgd.min.js"></script>
+    
+    <!-- Mapbox Javascript -->
+    <script src="../assets/js/mapbox-gl.js"></script>
+    <script src="../assets/js/mapbox.js"></script>
+    
+    <!-- Fullcalender Javascript -->
+    <script src='../assets/vendor/fullcalendar/core/main.js'></script>
+    <script src='../assets/vendor/fullcalendar/daygrid/main.js'></script>
+    <script src='../assets/vendor/fullcalendar/timegrid/main.js'></script>
+    <script src='../assets/vendor/fullcalendar/list/main.js'></script>
+    
+    <!-- SweetAlert JavaScript -->
+    <script src="../assets/js/sweetalert.js"></script>
+    
+    <!-- Vectoe Map JavaScript -->
+    <script src="../assets/js/vector-map-custom.js"></script>
+    
+    <!-- Chart Custom JavaScript -->
+    <script src="../assets/js/customizer.js"></script>
+    
+    <!-- Chart Custom JavaScript -->
+    <script src="../assets/js/chart-custom.js"></script>
+    
+    <!-- slider JavaScript -->
+    <script src="../assets/js/slider.js"></script>
+    
+    <!-- app JavaScript -->
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
