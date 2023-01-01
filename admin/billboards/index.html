@@ -25,339 +25,382 @@
           <div id="loading-center">
           </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light p-3">
-        <div class="iq-search-bar device-search ">
-            <form>
-                <div class="input-prepend input-append">
-                    <div class="btn-group ">
-                        <label class="dropdown-toggle searchbox " data-toggle="dropdown">
-                        <input id="admin-autocomplete" class="dropdown-toggle search-query text search-input " type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
-                        <!--a class="search-link" href="#"><i class="ri-search-line"></i></a-->
-                        <span class="caret"><!--icon--></span>
-                        </label>
-                        <ul class="dropdown-menu" id="admin-autocomplete-results">
-                            <li><a href="#"><div class="item">COMMING SOON ..</div></a></li>
+    <div class="wrapper">
+        <div class="two-sidebar sidebar-1  sidebar-default ">
+            <div class="iq-sidebar-small">
+                <div class="sidebar-top">
+                    <div class="iq-sidebar-small-logo">
+                        <a href="#">
+                        <img src="../../assets/images/logo.png" class="img-fluid" alt="logo">
+                        </a>
+                    </div>
+                    <div class="iq-loader-box" id="b-loader" style="display: none;">
+                        <div class="iq-loader-13" style="color:blue;"></div>
+                    </div> 
+                    <div class="sidebar-menu-icon" style="margin-top: 300px;">
+                        <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
+                            <li class="nav-item d-block active">
+                                <a  href="#project-pan" role="tab" aria-selected="false">                            
+                                    <i class="las la-chevron-circle-right" style="color:#062B78;font-size: 36px;font-weight: bold;"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="iq-sidebar">
+                <div class="data-scrollbar" data-scroll="1">
+                    <nav class="iq-sidebar-menu">
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="project-pan" role="tabpanel">                     
+                                <ul  id="load-billboards-results" class="iq-menu list-inline m-0 mb-3 px-3">
+                                    <li class=" ">                            
+                                        
+                                    </li>
+                                 
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="p-3"></div>
+                </div>
+            </div>
         </div>
-    </nav>
-<div class="container-fluid ">
-     <div class="container-fluid ">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-none">
-                    <div class="card-body custom-card-space">
-                        <ul class="nav nav-pills tab-pills body-tab-pills" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#distributions" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Edge</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#profile" role="tab" aria-controls="backups" aria-selected="false" id="load-campaigns" >Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"  aria-controls="backups" aria-selected="false" href="../../admin/"  ><i class="las la-long-arrow-alt-left" style="color: blue;"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <div class="iq-loader-box" style="display:none;" id="b-loader">
-                                    <div class="iq-loader-13"></div>
-                                 </div>
-                            </li>
-                        </ul>
-                        <div class="tab-content task-content create-droplet">
-                            <div class="tab-pane fade show active" id="distributions" role="tabpanel">                     
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="row" >
-                                            <!-- EDGE-->
-                                            <div class="col-lg-8">
-                                                <div class="card">
-                                                   <div class="card-header d-flex justify-content-between">
-                                                      <div class="header-title">
-                                                         <h6 class="card-title">Create A New Billboard</h6>
-                                                      </div>
-                                                   </div>
-                                                   <div class="card-body">
-                                                      <div class="new-user-info">
-                                                         <form id="create-billboard" method="post" enctype="multipart/form-data">
-                                                            <h6 class="mb-3">SCREEN</h6>
-                                                            <div class="row">
-                                                               <div class="card">
-                                                                  <div class="card-header d-flex justify-content-between">
-                                                                     <div class="header-title">
-                                                                        <h6 class="card-title">Image <i style="color:red;">*</i></h6>
-                                                                     </div>
-                                                                  </div>
-                                                                  <div class="card-body">
-                                                                     <div class="form-group">
-                                                                        <div class="crm-profile-img-edit position-relative">
-                                                                           <img class="crm-profile-pic rounded avatar-100" src="../../assets/images/user/11.png" alt="profile-pic">
-                                                                           <div class="crm-p-image bg-primary">
-                                                                              <i class="las la-pen upload-button"></i>
-                                                                              <input class="file-upload" type="file" id ="file" accept="image/*" onchange="previewFile(this);" required>
-                                                                           </div>
-                                                                        </div>
-                                                                     <div class="img-extension mt-3">
-                                                                        <div class="d-inline-block align-items-center">
-                                                                              <span>Only</span>
-                                                                           <a href="javascript:void();">.jpg</a>
-                                                                           <a href="javascript:void();">.png</a>
-                                                                           <a href="javascript:void();">.jpeg</a>
-                                                                           <span>allowed</span>
-                                                                        </div>
-                                                                     </div>
-                                                                     </div>
-                                                                  </div>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
+        <div class="iq-top-navbar">
+            <div class="iq-navbar-custom">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <div class="iq-search-bar device-search">
+                        <form>
+                            <div class="input-prepend input-append">
+                                <div class="btn-group ">
+                                    <label class="dropdown-toggle searchbox " data-toggle="dropdown">
+                                    <input id="admin-autocomplete" class="dropdown-toggle search-query text search-input " type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
+                                    <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                                    <span class="caret"></span>
+                                    </label>
+                                    <ul class="dropdown-menu" id="admin-autocomplete-results">
+                                        <li><a href="#"><div class="item">COMMING SOON ..</div></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-label="Toggle navigation">
+                            <i class="ri-menu-3-line"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                <li class="nav-item nav-icon search-content">
+                                    <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="ri-search-line"></i>
+                                    </a>
+                                    <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                        <form action="#" class="searchbox p-2">
+                                            <div class="form-group mb-0 position-relative">
+                                                <input type="text" class="text search-input font-size-12"
+                                                    placeholder="type here to search...">
+                                                <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2 border-left">
+                                    <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="d-flex align-items-center">
+                                            <img src="../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user" id="admin-profile-image">
+                                            <div class="caption ml-3">
+                                                <h6 class="mb-1" id="admin-usernames"></h6>
+                                                <p class="text-body mb-0" id="admin-email"></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="card shadow-none m-0">
+                                            <div class="card-body p-0 text-center">
+                                             
+                                                <div class="p-3">
+                                                    <h6 class="mb-1" style="display: none;"></h6>
+                                                    <p class="mb-0" id="admin-creation-date"></p>
+                                                    <div class="d-flex align-items-center justify-content-center mt-3">
+                                                        <a href="profile/" class="btn border mr-2">Profile</a>
+                                                        <a href="../../" class="btn border">Sign Out</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="content-page">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card border-none">
+                            <div class="card-body custom-card-space">
+                                <ul class="nav nav-pills tab-pills body-tab-pills" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#distributions" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Create A New Billboard</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"  aria-controls="backups" aria-selected="false" href="../../admin/"  ><i class="las la-long-arrow-alt-left" style="color: blue;"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content task-content create-droplet">
+                                    <div class="tab-pane fade show active" id="distributions" role="tabpanel">                     
+                                        <div class="card border-none bg-body">
+                                            <div class="card-body custom-card-space" >
+                                                <div class="row" >
+                                                    <form id="create-billboard" method="post" enctype="multipart/form-data">
+                                                        <div class="col-lg-8">
+                                                            <!-- SCREEN -->
+                                                            <div class="card">
                                                                 <div class="card-header d-flex justify-content-between">
                                                                     <div class="header-title">
-                                                                        <h6 class="card-title">Preview</h6>
+                                                                        <h6 class="card-title">SCREEN</h6>
                                                                     </div>
                                                                 </div>
                                                                 <div class="card-body">
-                                                                    <img class="crm-profile-pic rounded avatar-100" style="height:150px;width: 250px;" id="previewImg" src="../../assets/images/user/11.png" alt="Placeholder">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="fname">Name <i style="color:red;">*</i>:</label>
-                                                                <input type="text" class="form-control" id="name" placeholder=" 15 Mwanzi Rd Nairobi" required>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="lname">Sign Placement <i style="color:red;">*</i>:</label>
-                                                                    <select name="sign_placement" id="sign_placement" class="selectpicker form-control" data-style="py-0">
-                                                                    <option>Left</option>
-                                                                    <option>Center </option>
-                                                                    <option>Right</option>
-                                                                    </select>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="add1">Traffic Direction <i style="color:red;">*</i>:</label>
-                                                                    <select name="traffic_direction" id="traffic_direction" class="selectpicker form-control" data-style="py-0">
-                                                                    <option>East</option>
-                                                                    <option>West </option>
-                                                                    <option>North</option>
-                                                                    <option>South</option>
-                                                                    </select>
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="add2">Availability <i style="color:red;">*</i>:</label>
-                                                                    <select name="availability" id="availability" class="selectpicker form-control" data-style="py-0">
-                                                                    <option>Available</option>
-                                                                    <option>Unavailable </option>
-                                                                    <option>Suspended</option>
-                                                                    </select>
-                                                            </div>
-                                                               <div class="form-group col-md-12">
-                                                                  <label for="altconno">Screen Size <i style="color:red;">*</i> : Width: <i style="color:red;" name="dimension_width" id="dimension_width"> </i> Height: <i style="color:red;" name="dimension_height" id="dimension_height"></i></label>
-                                                                      <select name="dimension_width_height" id="dimension_width_height" class="selectpicker form-control" data-style="py-0">
-                                                                          <option>900x600</option>
-                                                                          <option>840x840</option>
-                                                                          <option>820x462</option>
-                                                                          <option>800x600</option>
-                                                                          <option>800x480</option>
-                                                                          <option>800x400</option>
-                                                                          <option>750x750</option>
-                                                                          <option>712x430</option>
-                                                                          <option>640x480</option>
-                                                                          <option>550x370</option>
-                                                                          <option>512x512</option>
-                                                                          <option>500x500</option>
-                                                                          <option>480x640</option>
-                                                                          <option>720x1280</option>
-                                                                          <option>1200x628</option>
-                                                                          <option>1366x768</option>
-                                                                          <option>1024x768</option>
-                                                                          <option>1024x576</option>
-                                                                          <option>1280x720</option>
-                                                                          <option>1920x1080</option>
-                                                                          <option>1080x1080</option>
-                                                                          <option>1080x2340</option>
-                                                                          <option>1400x1400</option>
-                                                                          <option>1500x1500</option>
-                                                                          <option>1600x1600</option>
-                                                                          <option>2048x1152</option>
-                                                                          <option>2560x1440</option>
-                                                                          <option>2660x1140</option>
-                                                                          <option>3840x2160</option>
-                                                                      </select>                                    
-                                                              </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="city">Duration <i style="color:red;">*</i>:</label>
-                                                                  <input type="number" min="1" max="365"  class="form-control" id="duration" placeholder="30 days" required>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="city">Daily Views <i style="color:red;">*</i>:</label>
-                                                                  <input type="number" min="1000" max="500000" class="form-control" id="daily_views" placeholder="Daily Views" required>
-                                                               </div>
-                                                            </div>
-                                                            <hr>
-                                                            <h6 class="mb-3">EDGE</h6>
-                                                            <div class="row">
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="mobno">Status <i style="color:red;">*</i>:</label>
-                                                                     <select name="status" id="status" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>OFF</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="altconno">vCpus <i style="color:red;">*</i>:</label>
-                                                                     <select name="capacity" id="capacity" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-12">
-                                                                  <label for="cname">IP Address <i style="color:red;">*</i></label>
-                                                                  <input type="url" placeholder="https://example.com"  class="form-control" id="ip_address" placeholder="https://example.com" required>
-                                                               </div>
-                                                               <div class="form-group col-md-12">
-                                                                  <label for="altconno">Screen Count <i style="color:red;">*</i>:</label>
-                                                                     <select name="screen_count" id="screen_count" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                     </select>
-                                                               </div>
-                                                            </div>
-                                                            <hr>
-                                                            <h6 class="mb-3">LOCATION</h6>
-                                                            <div class="row">
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="mobno">City <i style="color:red;">*</i>:</label>
-                                                                     <select name="city" id="city" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>Nairobi</option>
-                                                                        <option>Mombasa</option>
-                                                                        <option>Eldoret</option>
-                                                                        <option>Nakuru</option>
-                                                                        <option>Kisumu</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="altconno">State <i style="color:red;">*</i>:</label>
-                                                                     <select name="state" id="state" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>Nairobi</option>
-                                                                        <option>Mombasa</option>
-                                                                        <option>Eldoret</option>
-                                                                        <option>Nakuru</option>
-                                                                        <option>Kisumu</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="email">County <i style="color:red;">*</i>:</label>
-                                                                     <select name="county" id="county" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>Nairobi</option>
-                                                                        <option>Mombasa</option>
-                                                                        <option>Eldoret</option>
-                                                                        <option>Nakuru</option>
-                                                                        <option>Kisumu</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="pno">Country <i style="color:red;">*</i>:</label>
-                                                                     <select name="country" id="country" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>Kenya</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-12">
-                                                                  <label for="city">Zip <i style="color:red;">*</i>:</label>
-                                                                     <select name="zip" id="zip" class="selectpicker form-control" data-style="py-0">
-                                                                        <option>00100</option>
-                                                                        <option>80100</option>
-                                                                        <option>30100</option>
-                                                                        <option>20100</option>
-                                                                        <option>40100</option>
-                                                                     </select>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="email">Latitude <i style="color:red;">*</i>:</label>
-                                                                  <input type="text" class="form-control" id="latitude" placeholder="-1.257226699999981" required>
-                                                               </div>
-                                                               <div class="form-group col-md-6">
-                                                                  <label for="pno">Longitude <i style="color:red;">*</i>:</label>
-                                                                  <input type="text" class="form-control" id="longitude" placeholder="36.80320739999999" required>
-                                                               </div>
-                                                            </div>
-                                                            <button type="submit" class="btn btn-primary" id="create-billboard-btn">Add New Billboard</button>
-                                                         </form>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                          </div>
-                                            <!--END EDGE -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                     
-                            <div class="tab-pane fade" id="profile" role="tabpanel">
-                                <!--PROFILE-->
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" id="load-budget-results">
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <div class="header-title">
-                                                                <h6 class="card-title">Account</h6>
-                                                            </div>
-                                                            <div class="custom-switch-inner">
-                                                                <a href="#" class="btn mt-1" id="edge_availability">Save</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <div class="new-user-info">
-                                                                <div class="row">
-                                                                    <div class="card col-md-6">
-                                                                        <div class="card-header d-flex justify-content-between">
-                                                                            <div class="header-title">
-                                                                                <h6 class="card-title">Username & Password </i></h6>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="card-body">
-                                                                            <div class="form-group ">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <img src="../../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user" id="admin-profile-image">
-                                                                                    <div class="caption ml-3">
-                                                                                        <h6 class="mb-1" id="admin-usernames"></h6>
-                                                                                        <p class="text-body mb-0" id="admin-email"></p>
+                                                                    <div class="new-user-info">
+                                                                        <div class="row">
+                                                                            <div class="card">
+                                                                                <div class="card-header d-flex justify-content-between">
+                                                                                    <div class="header-title">
+                                                                                        <h6 class="card-title">Image <i style="color:red;">*</i></h6>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group col-md-6">
-                                                                            <div class="card-header d-flex justify-content-between">
-                                                                                <div class="header-title">
-                                                                                    <h6 class="card-title">Authentication</h6>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-body">
-                                                                                <div class="card-body p-0 text-center">
-                                                                                    <div class="p-3">
-                                                                                        <h6 class="mb-1" style="display: none;"></h6>
-                                                                                        <p class="mb-0" id="admin-creation-date"></p>
-                                                                                        <div class="d-flex align-items-center justify-content-center mt-3">
-                                                                                            <a href="profile/" class="btn border mr-2">Profile</a>
-                                                                                            <a href="../../auth/login/" class="btn border">Sign Out</a>
+                                                                                <div class="card-body">
+                                                                                    <div class="form-group">
+                                                                                        <div class="crm-profile-img-edit position-relative">
+                                                                                        <img class="crm-profile-pic rounded avatar-100" src="../../assets/images/user/11.png" alt="profile-pic">
+                                                                                        <div class="crm-p-image bg-primary">
+                                                                                            <i class="las la-pen upload-button"></i>
+                                                                                            <input class="file-upload" type="file" id ="file" accept="image/*" onchange="previewFile(this);" required>
+                                                                                        </div>
+                                                                                        </div>
+                                                                                    <div class="img-extension mt-3">
+                                                                                        <div class="d-inline-block align-items-center">
+                                                                                            <span>Only</span>
+                                                                                        <a href="javascript:void();">.jpg</a>
+                                                                                        <a href="javascript:void();">.png</a>
+                                                                                        <a href="javascript:void();">.jpeg</a>
+                                                                                        <span>allowed</span>
                                                                                         </div>
                                                                                     </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <div class="card-header d-flex justify-content-between">
+                                                                                    <div class="header-title">
+                                                                                        <h6 class="card-title">Preview</h6>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card-body">
+                                                                                    <img class="crm-profile-pic rounded avatar-100" style="height:150px;width: 250px;" id="previewImg" src="../../assets/images/user/11.png" alt="Placeholder">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group col-md-12">
+                                                                                <label for="altconno">Screen Size <i style="color:red;">*</i> : Width: <i style="color:red;" name="dimension_width" id="dimension_width"> </i> Height: <i style="color:red;" name="dimension_height" id="dimension_height"></i></label>
+                                                                                    <select name="dimension_width_height" id="dimension_width_height" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>900x600</option>
+                                                                                        <option>840x840</option>
+                                                                                        <option>820x462</option>
+                                                                                        <option>800x600</option>
+                                                                                        <option>800x480</option>
+                                                                                        <option>800x400</option>
+                                                                                        <option>750x750</option>
+                                                                                        <option>712x430</option>
+                                                                                        <option>640x480</option>
+                                                                                        <option>550x370</option>
+                                                                                        <option>512x512</option>
+                                                                                        <option>500x500</option>
+                                                                                        <option>480x640</option>
+                                                                                        <option>720x1280</option>
+                                                                                        <option>1200x628</option>
+                                                                                        <option>1366x768</option>
+                                                                                        <option>1024x768</option>
+                                                                                        <option>1024x576</option>
+                                                                                        <option>1280x720</option>
+                                                                                        <option>1920x1080</option>
+                                                                                        <option>1080x1080</option>
+                                                                                        <option>1080x2340</option>
+                                                                                        <option>1400x1400</option>
+                                                                                        <option>1500x1500</option>
+                                                                                        <option>1600x1600</option>
+                                                                                        <option>2048x1152</option>
+                                                                                        <option>2560x1440</option>
+                                                                                        <option>2660x1140</option>
+                                                                                        <option>3840x2160</option>
+                                                                                    </select>                                    
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- EDGE-->
+                                                            <div class="card">
+                                                                <div class="card-header d-flex justify-content-between">
+                                                                    <div class="header-title">
+                                                                        <h6 class="card-title">EDGE</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="new-user-info">
+                                                                        <div class="row">
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="mobno">Status <i style="color:red;">*</i>:</label>
+                                                                                    <select name="status" id="status" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>OFF</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="altconno">vCpus <i style="color:red;">*</i>:</label>
+                                                                                    <select name="capacity" id="capacity" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>5</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-12">
+                                                                                <label for="cname">IP Address <i style="color:red;">*</i></label>
+                                                                                <input type="url" placeholder="https://example.com"  class="form-control" id="ip_address" placeholder="https://example.com" required>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="altconno">Screen Count <i style="color:red;">*</i>:</label>
+                                                                                    <select name="screen_count" id="screen_count" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>1</option>
+                                                                                        <option>2</option>
+                                                                                        <option>3</option>
+                                                                                        <option>4</option>
+                                                                                        <option>5</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="add2">Availability <i style="color:red;">*</i>:</label>
+                                                                                    <select name="availability" id="availability" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Available</option>
+                                                                                        <option>Unavailable </option>
+                                                                                        <option>Suspended</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- LOCATION-->
+                                                            <div class="card">
+                                                                <div class="card-header d-flex justify-content-between">
+                                                                    <div class="header-title">
+                                                                        <h6 class="card-title">LOCATION</h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="new-user-info">
+                                                                        <div class="row">
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="fname">Name <i style="color:red;">*</i>:</label>
+                                                                                <input type="text" class="form-control" id="name" placeholder=" 15 Mwanzi Rd Nairobi" required>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="lname">Sign Placement <i style="color:red;">*</i>:</label>
+                                                                                    <select name="sign_placement" id="sign_placement" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Left</option>
+                                                                                        <option>Center </option>
+                                                                                        <option>Right</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="add1">Traffic Direction <i style="color:red;">*</i>:</label>
+                                                                                    <select name="traffic_direction" id="traffic_direction" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>East</option>
+                                                                                        <option>West </option>
+                                                                                        <option>North</option>
+                                                                                        <option>South</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                    
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="city">Duration <i style="color:red;">*</i>:</label>
+                                                                                <input type="number" min="1" max="365"  class="form-control" id="duration" placeholder="30 days" required>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="city">Daily Views <i style="color:red;">*</i>:</label>
+                                                                                <input type="number" min="1000" max="500000" class="form-control" id="daily_views" placeholder="Daily Views" required>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="mobno">City <i style="color:red;">*</i>:</label>
+                                                                                    <select name="city" id="city" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Nairobi</option>
+                                                                                        <option>Mombasa</option>
+                                                                                        <option>Eldoret</option>
+                                                                                        <option>Nakuru</option>
+                                                                                        <option>Kisumu</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="altconno">State <i style="color:red;">*</i>:</label>
+                                                                                    <select name="state" id="state" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Nairobi</option>
+                                                                                        <option>Mombasa</option>
+                                                                                        <option>Eldoret</option>
+                                                                                        <option>Nakuru</option>
+                                                                                        <option>Kisumu</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="email">County <i style="color:red;">*</i>:</label>
+                                                                                    <select name="county" id="county" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Nairobi</option>
+                                                                                        <option>Mombasa</option>
+                                                                                        <option>Eldoret</option>
+                                                                                        <option>Nakuru</option>
+                                                                                        <option>Kisumu</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="pno">Country <i style="color:red;">*</i>:</label>
+                                                                                    <select name="country" id="country" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>Kenya</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="city">Zip <i style="color:red;">*</i>:</label>
+                                                                                    <select name="zip" id="zip" class="selectpicker form-control" data-style="py-0">
+                                                                                        <option>00100</option>
+                                                                                        <option>80100</option>
+                                                                                        <option>30100</option>
+                                                                                        <option>20100</option>
+                                                                                        <option>40100</option>
+                                                                                    </select>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="email">Latitude <i style="color:red;">*</i>:</label>
+                                                                                <input type="text" class="form-control" id="latitude" placeholder="-1.257226699999981" required>
+                                                                            </div>
+                                                                            <div class="form-group col-md-6">
+                                                                                <label for="pno">Longitude <i style="color:red;">*</i>:</label>
+                                                                                <input type="text" class="form-control" id="longitude" placeholder="36.80320739999999" required>
+                                                                            </div>
+                                                                        </div>
+                                                                        <button type="submit" class="btn btn-primary" id="create-billboard-btn">Add New Billboard</button>
+                                                            
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -367,11 +410,9 @@
                         </div>
                     </div>
                 </div>
+                <!-- Page end  -->
             </div>
         </div>
-        <!-- Page end  -->
-        
-    </div>
     </div>
     </footer>
     <!-- Backend Bundle JavaScript -->

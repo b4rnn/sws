@@ -43,13 +43,14 @@
                         <img src="../assets/images/logo.png" class="img-fluid" alt="logo">
                         </a>
                     </div>
-                </div>
-                <div class="sidebar-bottom">
-                    <div class="sidebar-menu-icon">
+                    <div class="iq-loader-box" id="b-loader" style="display: none;">
+                        <div class="iq-loader-13" style="color:blue;"></div>
+                    </div> 
+                    <div class="sidebar-menu-icon" style="margin-top: 300px;">
                         <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
                             <li class="nav-item d-block active">
-                                <a class="nav-link" data-toggle="pill" href="#project-pan" role="tab" aria-selected="false">                            
-                                    <svg width="45" height="45" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 44H38C39.1046 44 40 43.1046 40 42V14H30V4H10C8.89543 4 8 4.89543 8 6V42C8 43.1046 8.89543 44 10 44Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 4L40 14" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21H27.4928V24.5L34 22V33L27.4928 30.5V34H14V21Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <a  href="#project-pan" role="tab" aria-selected="false">                            
+                                    <i class="las la-chevron-circle-right" style="color:#062B78;font-size: 36px;font-weight: bold;"></i>
                                 </a>
                             </li>
                         </ul>
@@ -60,10 +61,7 @@
                 <div class="data-scrollbar" data-scroll="1">
                     <nav class="iq-sidebar-menu">
                         <div class="tab-content">
-                            <div class="tab-pane fade active show" id="project-pan" role="tabpanel">   
-                                <div class="iq-loader-box" id="b-loader" style="display: none;">
-                                    <div class="iq-loader-13"></div>
-                                </div>                     
+                            <div class="tab-pane fade active show" id="project-pan" role="tabpanel">                     
                                 <ul  id="load-billboards-results" class="iq-menu list-inline m-0 mb-3 px-3">
                                     <li class=" ">                            
                                         <a href="#campaign">
@@ -106,6 +104,30 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                <li class="nav-item nav-icon icon-dropdown dropdown">
+                                    <a href="#" class="search-toggle dropdown-toggle btn btn-primary text-white add-btn"
+                                        id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Create<i class="ri-arrow-down-s-line arrow pl-2"></i>
+                                    </a>
+                                    <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                        <div class="card shadow-none m-0">
+                                            <div class="card-body p-0">
+                                                <a href="billboards/" class="">
+                                                    <div class="d-flex align-items-center p-3 border-bottom">
+                                                        <div class="icon iq-icon-box-2 icon-text bg-body rounded">
+                                                            B
+                                                        </div>
+                                                        <div>
+                                                            <h6>Billboard</h6>
+                                                            <p class="mb-0 text-body font-size-14">Create A New Billboard</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li class="nav-item nav-icon search-content">
                                     <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
@@ -141,7 +163,7 @@
                                                     <p class="mb-0" id="admin-creation-date"></p>
                                                     <div class="d-flex align-items-center justify-content-center mt-3">
                                                         <a href="profile/" class="btn border mr-2">Profile</a>
-                                                        <a href="../auth/login/" class="btn border">Sign Out</a>
+                                                        <a href="../" class="btn border">Sign Out</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,13 +184,13 @@
                             <div class="card-body custom-card-space">
                                 <ul class="nav nav-pills tab-pills body-tab-pills " id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="pill" href="#locations" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Edge</a>
+                                        <a class="nav-link active" data-toggle="pill" href="#locations" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Edge Computer</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#snapshots" role="tab" aria-controls="snapshots" aria-selected="false" id="load-design">Design</a>
+                                        <a class="nav-link" data-toggle="pill" href="#snapshots" role="tab" aria-controls="snapshots" aria-selected="false" id="load-design">Billboard</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#review" role="tab" aria-controls="backups" aria-selected="false" id="load-review" >Review</a>
+                                        <a class="nav-link" data-toggle="pill" href="#review" role="tab" aria-controls="backups" aria-selected="false" id="load-review" >Summary</a>
                                     </li>
                                     <li class="nav-item">
                                         <button type="button" id="billboard_status" class="btn btn-primary mt-2" data-toggle="modal" data-target="#status_success" style="display: none;"></button>
@@ -201,7 +223,6 @@
                                                                 <a href="#" class="btn mt-2" id="edge_memory" >4 GB Memory</a>
                                                                 <a href="#" class="btn mt-2" id="edge_storage">16 GB Disk</a>
                                                             </div>
-                                                            
                                                            
                                                         </div>
                                                     </div>
@@ -210,44 +231,41 @@
                                                     <div class="card bg-body">
                                                         <div class="card-body">
                                                             <ul class="list-inline task-ip p-0 mb-0 row align-items-center">
-                                                                <li class="col-lg-4 col-md-3">
+                                                                <li class="col-lg-5 col-md-6">
                                                                     <div class="d-flex align-items-center mb-lg-0 mb-6">
-                                                                        <div class="icon iq-icon-box-2 edit-button bg-white border rounded">
+                                                                        <div class="icon iq-icon-box-2 edit-button bg-white border rounded mr-3">
                                                                             <i class="las la-pen" tooltip="edit"></i>
                                                                         </div>
                                                                         <div>
                                                                             <h6 class="mb-2" >ipv4</h6>
-                                                                            <p class="mb-0" id="edge_ip_address"></p>
+                                                                            <p class="mb-0" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 150px;" id="edge_ip_address"></p>
                                                                         </div>
                                                                     </div>
                                                                 </li>
-                                                                <li class="col-lg-2 col-md-3">
+                                                                <li class="col-lg-2 col-md-6">
                                                                     <div class="d-flex align-items-center mb-lg-0 mb-3 justify-content-end mr-3">
                                                                         <div>
                                                                             <h6 class="mb-2">Status</h6>
-                                                                            <a href="#" class="btn btn-sm btn-primary line-height rounded" data-toggle="alert" data-message="Enabled successfully" id="edge_status" ></a>
+                                                                            <a href="#" class="btn btn-sm btn-primary line-height rounded" style="width: 50px;"  id="edge_status_label" ></a>
                                                                         </div>
                                                                     </div>
                                                                 </li>
-                                                                <li class="col-lg-3 col-md-6">
+                                                                <li class="col-lg-2 col-md-6">
                                                                     <div class="d-flex align-items-center mb-md-0 mb-3  justify-content-end mr-3">
-                                                                        <div class="icon iq-icon-box-2 bg-white border rounded">
-                                                                            <p id="edge_cpus"></p>                          
-                                                                        </div>
                                                                         <div>
                                                                             <h6 class="mb-2">VCpus</h6>
-                                                                            <input type="range" class="custom-range" id="customRange1" min="1" max="10">
+                                                                            <a href="#" class="btn btn-sm btn-primary line-height rounded" style="width: 50px;"  id="edge_cpus" ></a>
                                                                         </div>
                                                                     </div>
                                                                 </li>
                                                                 <li class="col-lg-3 col-md-6">
-                                                                    <div class="d-flex align-items-center justify-content-end">
+                                                                    <div class="d-flex align-items-center justify-content-end mr-3">
                                                                         <div class="icon iq-icon-box-2 bg-white border rounded">
                                                                             <p id="edge_screen_count"></p>
                                                                         </div>
                                                                         <div>
                                                                             <h6 class="mb-2">Screen Count</h6>
-                                                                            <input type="range" class="custom-range" id="customRange2" min="1" max="10">
+                                                                            <input type="range" class="custom-range" id="customRange2" min="1">
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -503,6 +521,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <!--NOTIFICATION-->
+                                    <a href="#" class="btn btn-sm btn-primary line-height rounded" style="display: none;" data-toggle="alert" data-message="Enabled successfully" id="edge_status" ></a>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 var geoData       = {};
 var addressPoints = [];
+var locationData  = {};
 var ip_address    = 'http://127.0.0.1:5008';
 
 //preview
@@ -17,8 +18,8 @@ function previewFile(input){
             document.getElementById('previewImg').style.display = 'block';
             document.getElementById('video_panel').style.display = 'none';
             document.getElementById('save_design_file').style.display = 'none';
+            document.getElementById('animate_design_btn').style.display = 'block';
             document.getElementById('animate_design_file').style.display = 'block';
-            
         }
 
         reader.readAsDataURL(file);
@@ -33,6 +34,7 @@ function previewFile(input){
             document.getElementById('previewVid').style.display = 'block';
             document.getElementById('video_panel').style.display = 'none';
             document.getElementById('save_design_file').style.display = 'block';
+            document.getElementById('animate_design_btn').style.display = 'none';
             document.getElementById('animate_design_file').style.display = 'none';
         }
 
@@ -56,10 +58,23 @@ function onRenderSchedule(chess) {
     
 }
 
+function today() {
+    let d = new Date();
+    let currDate = d.getDate();
+    let currMonth = d.getMonth()+1;
+    let currYear = d.getFullYear();
+    return currYear + "-" + ((currMonth<10) ? '0'+currMonth : currMonth )+ "-" + ((currDate<10) ? '0'+currDate : currDate );
+}
+
 $(document).ready(function() {
     
     var uid = window.localStorage.getItem('content');
     document.getElementById('video_panel').style.display = 'none';
+
+    $('#end_date').val(today());
+    $('#end_date').attr('min', today());
+    $('#start_date').val(today());
+    $('#start_date').attr('min', today());
 
     $.ajax({
         method: "POST",
@@ -139,7 +154,7 @@ $(document).ready(function() {
                         +'</div>'
                         +'<div style="margin-left:-120px;margin-top:50px;">'
                             +'<div id="'+data.msg[i].billboard_id+'" onclick="saveMap(this)" class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:108px;margin-top:-50px;" title="Save Billboard">'
-                            +'<i class="las la-check" style="font-size:24px;color:red;"></i>'
+                            +'<i id="select_'+data.msg[i].billboard_id+'" class="las la-check-circle" style="font-size:24px;color:green;"></i>'
                             +'<p style="font-size:12px;margin-top:-25px;color:green;">Select</p>'
                             +'</div>'
                             +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
@@ -233,7 +248,12 @@ $(document).ready(function() {
             success: function(data) {
                 if (data.status==200){
                     document.getElementById('b-loader').style.display = 'none';
-                    $('#billboard_status').click();
+                    if($(document.activeElement).attr('id')=='design_continue'){
+                        $('#load-schedule').click();
+                    }
+                    if($(document.activeElement).attr('id')=='design_save_and_close'){
+                        $('#client-home').click();
+                    }
                 }
                 if (data.status!=200){
                     document.getElementById('b-loader').style.display = 'none';
@@ -257,7 +277,7 @@ $(document).ready(function() {
         var form_data               = $('#file').get(0);
         var input_file              = form_data.files[0];
         var extension               = input_file.name.split('.').pop().toLowerCase();
-        var media_display_position          = $('select[name=design-dropdown] option').filter(':selected').val();
+        var media_display_position  = $('select[name=design-dropdown] option').filter(':selected').val();
 
         reader.readAsDataURL(input_file);
         document.getElementById('b-loader').style.display = 'block';
@@ -275,9 +295,14 @@ $(document).ready(function() {
                 cache: false,
                 processData: false,
                 success: function(data) {
-                    if (data.status==200){
+                    document.getElementById('b-loader').style.display = 'none';
+                    if($(document.activeElement).attr('id')=='design_file_continue'){
                         $('#billboard_status').click();
-                        document.getElementById('b-loader').style.display = 'none';
+                        $('#load-review').click();
+                    }
+                    if($(document.activeElement).attr('id')=='design_file_save_and_close'){
+                        $('#billboard_status').click();
+                        $('#client-home').click();
                     }
                     if (data.status!=200){
                         document.getElementById('b-loader').style.display = 'none';
@@ -292,53 +317,6 @@ $(document).ready(function() {
                     console.log(err);
                 }
             });
-        });
-    });
-
-    $("#load-design").bind('click', function(e) {
-        e.preventDefault();
-        $('#divisiondrp').empty();
-        $.ajax({
-            method: "POST",
-            url: ip_address+'/api/campaign/query',
-            contentType: 'application/json;charset=UTF-8',
-            data: JSON.stringify({'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid')}),
-            dataType: "json",
-            cache: false,
-            processData: false,
-            success: function(data) {
-                if (data.status==200){
-                    var inputElement = '<select id="design-dropdown" class="form-control"  data-style="py-0">';  
-                    for(var i = 0; i < data.display.length; i++){
-                        for(var j = 0; j < data.display[i].length; j++){
-                            inputElement += '<option value="' + data.display[i][j] + '">' + data.display[i][j] + '</option>';
-                        }
-                    }
-                    inputElement += '</select>';  
-                    $('#divisiondrp').append(inputElement);
-                    
-                    $("#design-dropdown").each(function () {  
-                        $('option', this).each(function () {  
-          
-                            if ($(this).text() == 'Select') {  
-                                $(this).attr('selected', 'selected')  
-                            };  
-                        });  
-                    });
-                    
-                }
-                if (data.status!=200){
-                    
-                }
-            },
-            statusCode: {
-                400: function(data) {
-                    console.log(data.status);
-                }
-            },
-            error: function(err) {
-                console.log(err);
-            }
         });
     });
 
@@ -362,8 +340,14 @@ $(document).ready(function() {
                 success: function(data) {
                     if (data.status==200){
                         document.getElementById('b-loader').style.display = 'none';
-                        $('#billboard_status').click();
-                        $('.scheduler-reset').click();
+                        if($(document.activeElement).attr('id')=='schedule_continue'){
+                            $('.scheduler-reset').click();
+                            $('#load-design').click();
+                        }
+                        if($(document.activeElement).attr('id')=='schedule_save_and_close'){
+                            $('.scheduler-reset').click();
+                            $('#client-home').click();
+                        }
                     }
                     if (data.status!=200){
                         document.getElementById('b-loader').style.display = 'none';
@@ -430,7 +414,7 @@ $(document).ready(function() {
 
                         +'<div style="margin-left:-120px;margin-top:50px;">'
                             +'<div id="'+pkt.location[i].billboard_id+'" onclick="saveMap(this)" class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:108px;margin-top:-50px;" title="Save Billboard">'
-                            +'<i class="las la-check" style="font-size:24px;color:red;"></i>'
+                            +'<i  class="las la-check" style="font-size:24px;color:green;"></i>'
                             +'<p style="font-size:12px;margin-top:-25px;color:green;">Select</p>'
                             +'</div>'
                             +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
@@ -511,6 +495,7 @@ $(document).ready(function() {
 
     $("#save_review").bind('submit', function(e) {
         e.preventDefault();
+        document.getElementById('b-loader').style.display = 'block';
         $.ajax({
             method: "POST",
             url: ip_address+'/api/campaign/submit',
@@ -521,12 +506,19 @@ $(document).ready(function() {
             processData: false,
             success: function(data) {
                 if (data.status==200){
-                    $('#billboard_status').click();
-                    $('.scheduler-reset').click();
-                    $('#save_budget')[0].reset();
-                    $('#save_design')[0].reset();
-                    $('#save_schedule')[0].reset();
-                    window.location = data.uri;
+
+                    document.getElementById('b-loader').style.display = 'none';
+                    if($(document.activeElement).attr('id')=='review_continue'){
+                        $('#billboard_status').click();
+                        $('.scheduler-reset').click();
+                        $('#save_budget')[0].reset();
+                        $('#save_design')[0].reset();
+                        $('#save_schedule')[0].reset();
+                        window.location = data.uri;
+                    }
+                    if($(document.activeElement).attr('id')=='review_save_and_close'){
+                        $('#billboard_status').click();
+                    }
                 }
                 if (data.status!=200){
                     
@@ -544,14 +536,21 @@ $(document).ready(function() {
         });
     });
 
+
+    $("#design-dropdown").change(function(){
+        var selectedCountry = $(this).children("option:selected").val();
+        alert("You have selected the country - " + selectedCountry);
+    });
+
     $("#animate_design_file").bind('click', function(e) {
         e.preventDefault();
-        var adverts                 = '';
-        var reader                  = new FileReader();
-        var form_data               = $('#file').get(0);
-        var input_file              = form_data.files[0];
-        var extension               = input_file.name.split('.').pop().toLowerCase();
-        var media_display_position  = $('select[name=design-dropdown] option').filter(':selected').val();
+        var adverts                    = '';
+        var reader                     = new FileReader();
+        var form_data                  = $('#file').get(0);
+        var input_file                 = form_data.files[0];
+        var extension                  = input_file.name.split('.').pop().toLowerCase();
+        var media_display_position     = $('#design-dropdown').find(":selected").text();
+        var media_screen_width_height  = $('#design-dropdown').find(":selected").val();
     
         reader.readAsDataURL(input_file);
         document.getElementById('b-loader').style.display = 'block';
@@ -564,12 +563,13 @@ $(document).ready(function() {
                 method: "POST",
                 url: ip_address+'/api/campaign/animate',
                 contentType: 'application/json;charset=UTF-8',
-                data: JSON.stringify({'media_position':'noop', 'file': base64String ,'extension': extension ,'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid')}),
+                data: JSON.stringify({'media_position':media_display_position, 'file': base64String ,'extension': extension ,'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid'),'screen':media_screen_width_height.split(':')[0],'width':media_screen_width_height.split(':')[1],'height':media_screen_width_height.split(':')[2]}),
                 dataType: "json",
                 cache: false,
                 processData: false,
                 success: function(data) {
                     if (data.status==200){
+                        console.log(data);
                         document.getElementById('b-loader').style.display = 'none';
                         for(var i = 0; i < data.videos.length; i++){
                         adverts +='<div class="form-group col-md-6">'
@@ -578,7 +578,7 @@ $(document).ready(function() {
                                             +'<div class="header-title">'
                                                 +'<h6 class="card-title">'+data.names[i]+'</h6>'
                                                     +'</div>'
-                                                +'<h6 class="card-title" ></h6><i class="las la-check" id="'+data.v[i]+':'+data.p[i]+'" style="font-size:24px;color:green;" onclick="savePanel(this)" title="Select Video"></i>'
+                                                +'<div class="custom-switch-inner"><button type="submit" class="btn btn-outline-success mt-2"><i class="las la-check" id="'+data.v[i]+':'+data.p[i]+':'+data.xpos+':'+data.ypos+':'+data.h+':'+data.w+':'+data.mpos+'" style="font-size:12px;color:green;" onclick="savePanel(this)" title="Select Video">Save & Continue</i></button></div>'
                                             +'</div>'
                                                 +'<video controls muted  class="crm-profile-pic rounded avatar-100" >'
                                                 +'<source src="'+data.videos[i]+'" type="video/mp4">'
@@ -607,6 +607,50 @@ $(document).ready(function() {
         });
     });
 
+    $("#save_location").bind('submit', function(e) {
+        e.preventDefault();
+        console.log(Object.keys(locationData).length);
+        if(Object.keys(locationData).length==3){
+            $.ajax({
+                method: "POST",
+                url: ip_address+'/api/campaign/locations',
+                contentType: 'application/json;charset=UTF-8',
+                data: JSON.stringify(locationData),
+                dataType: "json",
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    if (data.status==200){
+                        document.getElementById('b-loader').style.display = 'none';
+                        if($(document.activeElement).attr('id')=='location_continue'){
+                            $('#billboard_status').click();
+                            $('#load-budget').click();
+                        }
+                        if($(document.activeElement).attr('id')=='location_save_and_close'){
+                            $('#billboard_status').click();
+                            $('#client-home').click();
+                        }
+                    }
+                    if (data.status!=200){
+                        document.getElementById('b-loader').style.display = 'none';
+                    }
+                },
+                statusCode: {
+                    400: function(data) {
+                        console.log(data.status);
+                    }
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+        if(Object.keys(locationData).length<3){
+            alert("select billboard first");
+        }
+        return false;
+    });
+
     function log(msg) {
         $('#log').prepend(msg);
     }
@@ -619,12 +663,10 @@ $(document).ready(function() {
         }
     });
 
-
     $(document).on('mouseover', 'video', function() { 
         $(this).get(0).play(); 
     }); 
 
-    //pause video on mouse leave
     $(document).on('mouseleave', 'video', function() { 
         $(this).get(0).pause(); 
     });
@@ -663,21 +705,46 @@ function queryMap(addressPoints) {
 }
 
 function saveMap(addressPoints) {
+    locationData={};
+    
+    $('#divisiondrp').empty();
+
+    console.log({'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid')});
+
     $.ajax({
         method: "POST",
-        url: ip_address+'/api/campaign/locations',
+        url: ip_address+'/api/campaign/query',
         contentType: 'application/json;charset=UTF-8',
-        data: JSON.stringify({'billboard_id': $(addressPoints).attr("id"),'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid')}),
+        data: JSON.stringify({'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid'),'billboard_id': $(addressPoints).attr("id")}),
         dataType: "json",
         cache: false,
         processData: false,
         success: function(data) {
             if (data.status==200){
+                var inputElement = '<select id="design-dropdown" class="form-control"  data-style="py-0">';  
+                for(var i = 0; i < data.display.length; i++){
+                    for(var j = 0; j < data.display[i].length; j++){
+                        inputElement += '<option value="' + data.swh + '">' + data.display[i][j] + '</option>';
+                    }
+                }
+                inputElement += '</select>';  
+                $('#divisiondrp').append(inputElement);
+                
+                $("#design-dropdown").each(function () {  
+                    $('option', this).each(function () {  
+      
+                        if ($(this).text() == 'Select') {  
+                            $(this).attr('selected', 'selected')  
+                        };  
+                    });  
+                });
+                
                 $('#billboard_status').click();
+                $("#select_"+$(addressPoints).attr("id")).css({"color": "blue","font-weight": "bolder"});
+                locationData={'billboard_id': $(addressPoints).attr("id"),'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid')};
             }
             if (data.status!=200){
                 
-                $('#billboard_status').click();
             }
         },
         statusCode: {
@@ -689,7 +756,6 @@ function saveMap(addressPoints) {
             console.log(err);
         }
     });
-    return false;
 }
 
 function savePanel(metrics) {
@@ -698,7 +764,7 @@ function savePanel(metrics) {
         method: "POST",
         url: ip_address+'/api/campaign/save/animate',
         contentType: 'application/json;charset=UTF-8',
-        data: JSON.stringify({'media_content':$(metrics).attr("id").split(':')[0],'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid'),'media_poster':$(metrics).attr("id").split(':')[1],'media_position':'0'}),
+        data: JSON.stringify({'media_content':$(metrics).attr("id").split(':')[0],'uid':window.localStorage.getItem('content'),'campaign_id':window.localStorage.getItem('cid'),'media_poster':$(metrics).attr("id").split(':')[1],'media_position':$(metrics).attr("id").split(':')[6],'media_xpos':$(metrics).attr("id").split(':')[2],'media_ypos':$(metrics).attr("id").split(':')[3],'media_height':$(metrics).attr("id").split(':')[4],'media_width':$(metrics).attr("id").split(':')[5]}),
         dataType: "json",
         cache: false,
         processData: false,
@@ -706,6 +772,7 @@ function savePanel(metrics) {
             if (data.status==200){
                 $('#billboard_status').click();
                 document.getElementById('b-loader').style.display = 'none';
+                $('#load-review').click();
             }
             if (data.status!=200){
                 document.getElementById('b-loader').style.display = 'none';

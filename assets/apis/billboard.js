@@ -30,13 +30,13 @@ $("#capacity").change(function(){
     $("#dimension_width").attr("placeholder", $(this).find(':selected').text().split('x')[0]);
     $("#dimension_height").attr("placeholder", $(this).find(':selected').text().split('x')[1]);
 });
-//LOGIN
+
 $(document).ready(function() {
+    ip_address = 'http://127.0.0.1:5008';
     var uid = window.localStorage.getItem('content');
-    //QUERY PROFILE 
     $.ajax({
         method: "POST",
-        url: 'http://127.0.0.1:5008/api/profile/query',
+        url: ip_address+'/api/profile/query',
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify({'query': uid , 'limit': '1'}),
         dataType: "json",
@@ -64,9 +64,7 @@ $(document).ready(function() {
         }
     });
 
-    //AUTOCOMPLETE BILLBOARDS
     $("#admin-autocomplete").keyup(function(e) {
-        // prevent page refresh
         e.preventDefault();
         
         var result = '';
@@ -75,7 +73,7 @@ $(document).ready(function() {
         
         $.ajax({
             method: "POST",
-            url: 'http://127.0.0.1:5008/api/billboard/query/autocomplete',
+            url: ip_address+'/api/billboard/query/autocomplete',
             contentType: 'application/json;charset=UTF-8',
             data: JSON.stringify({'query': query , 'limit': '10'}),
             dataType: "json",
@@ -86,16 +84,13 @@ $(document).ready(function() {
                         result +='<li><a href="#"><div class="item">'+data.msg[i].names+'</div></a></li>';
                         $('#admin-autocomplete-results').html(result);
                     }
-                    //$('#admin-autocomplete-results').html(result);
                 }
                 if (data.status!=200){
-                    //$('#load-billboards-results').html(data.msg);
                     console.log(data.msg);
                 }
             },
             statusCode: {
                 400: function(data) {
-                    //document.getElementById('logInmsg').style.display = 'block';
                     console.log(data.status);
                 }
             },
@@ -107,7 +102,6 @@ $(document).ready(function() {
    
     //CREATE BILLBOARDS
     $("#create-billboard").bind('submit', function(e) {
-        // prevent page refresh
         e.preventDefault();
         var reader                  = new FileReader();
         var name                    = $('#name').val();
@@ -117,7 +111,7 @@ $(document).ready(function() {
         var duration                = $('#duration').val();
         var status                  = $('select[name=status] option').filter(':selected').val();
         var screen_count            = $('select[name=screen_count] option').filter(':selected').val();
-        var ip_address              = $('#ip_address').val();
+        var edge_ip_address         = $('#ip_address').val();
         var latitude                = $('#latitude').val();
         var longitude               = $('#longitude').val();
         var daily_views             = $('#daily_views').val();
@@ -145,9 +139,9 @@ $(document).ready(function() {
             document.getElementById('b-loader').style.display = 'block';
             $.ajax({
                 method: "POST",
-                url: 'http://127.0.0.1:5008/api/billboard/create',
+                url: ip_address+'/api/billboard/create',
                 contentType: 'application/json;charset=UTF-8',
-                data: JSON.stringify({'name': name, 'sign_placement': sign_placement, 'traffic_direction': traffic_direction, 'availability': availability, 'dimension_width': dimension_width , 'dimension_height': dimension_height, 'duration': duration, 'status': status, 'capacity': capacity, 'ip_address': ip_address, 'screen_count': screen_count, 'city': city, 'state': state, 'county': county, 'country': country, 'zip': zip, 'latitude': latitude, 'longitude': longitude, 'daily_views':daily_views, 'file': base64String ,'extension': extension ,'id':uid}),
+                data: JSON.stringify({'name': name, 'sign_placement': sign_placement, 'traffic_direction': traffic_direction, 'availability': availability, 'dimension_width': dimension_width , 'dimension_height': dimension_height, 'duration': duration, 'status': status, 'capacity': capacity, 'ip_address': edge_ip_address, 'screen_count': screen_count, 'city': city, 'state': state, 'county': county, 'country': country, 'zip': zip, 'latitude': latitude, 'longitude': longitude, 'daily_views':daily_views, 'file': base64String ,'extension': extension ,'id':uid}),
                 dataType: "json",
                 cache: false,
                 processData: false,

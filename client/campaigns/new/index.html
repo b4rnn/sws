@@ -42,14 +42,15 @@
                         <a href="../../../backend/index.html">
                         <img src="../../../assets/images/logo.png" class="img-fluid" alt="logo">
                         </a>
+                    </div> 
+                    <div class="iq-loader-box" id="b-loader" style="display: none;">
+                        <div class="iq-loader-13" style="color:blue;"></div>
                     </div>
-                </div>
-                <div class="sidebar-bottom">
-                    <div class="sidebar-menu-icon">
+                    <div class="sidebar-menu-icon" style="margin-top: 300px;">
                         <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
                             <li class="nav-item d-block active">
-                                <a class="nav-link" data-toggle="pill" href="#project-pan" role="tab" aria-selected="false">                            
-                                    <svg width="45" height="45" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 44H38C39.1046 44 40 43.1046 40 42V14H30V4H10C8.89543 4 8 4.89543 8 6V42C8 43.1046 8.89543 44 10 44Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 4L40 14" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21H27.4928V24.5L34 22V33L27.4928 30.5V34H14V21Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <a  href="#project-pan" role="tab" aria-selected="false">                            
+                                    <i class="las la-chevron-circle-right" style="color:#062B78;font-size: 36px;font-weight: bold;"></i>
                                 </a>
                             </li>
                         </ul>
@@ -61,9 +62,9 @@
                     <nav class="iq-sidebar-menu">
                         <div class="tab-content">
                             <div class="tab-pane fade active show" id="project-pan" role="tabpanel">   
-                                <div class="iq-loader-box" id="b-loader" style="display: none;">
+                                <!--div class="iq-loader-box" id="b-loader" style="display: none;">
                                     <div class="iq-loader-13"></div>
-                                </div>                     
+                                </div-->                     
                                 <ul  id="layout1-chart-2" class="iq-menu list-inline m-0 mb-3 px-3">
                                     <li class=" ">                            
                                         <a href="#campaign">
@@ -177,13 +178,12 @@
                                         <a class="nav-link" data-toggle="pill" href="#review" role="tab" aria-controls="backups" aria-selected="false" id="load-review" >Review</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link"  aria-controls="backups" aria-selected="false" href="../../../client/"  ><i class="las la-long-arrow-alt-left" style="color: blue;"></i></a>
+                                        <a class="nav-link"  aria-selected="false" href="../../../client/"  ><i id="client-home" class="las la-long-arrow-alt-left" style="color: blue;"></i></a>
                                     </li>
                                     <li class="nav-item">
                                         <button type="button" id="billboard_status" class="btn btn-primary mt-2" data-toggle="modal" data-target="#status_success" style="display: none;"></button>
                                     </li>
                                 </ul>  
-                                
                                 <div class="tab-content task-content create-droplet">
                                     <div class="tab-pane fade show active" id="locations" role="tabpanel">  
                                         <!--LOCATIONS-->                   
@@ -191,11 +191,24 @@
                                             <div class="card-body custom-card-space" >
                                                 <div class="card border-none">
                                                     <div class="card-body custom-card-space ">
-                                                        <div class="row col-lg-12 p-2">
-                                                            <div class="col-lg-12  card card-body custom-card-space" id="map" style="max-height:420px;min-height: 420px;">
-                                    
+                                                        <form id="save_location" method="post">
+                                                            <div class="card">
+                                                                <div class="card-header d-flex justify-content-between">
+                                                                    <div class="header-title">
+                                                                        <h6 class="card-title">Save Selected billboard that reach your potential customers</i></h6>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="col-lg-12" id="map" style="max-height:420px;min-height: 420px;">
+                                            
+                                                                    </div>
+                                                                    <div class="custom-switch-inner">
+                                                                        <button type="submit" class="btn btn-outline-success mt-2" id="location_save_and_close"> <i class="las la-save" style="color:green;font-size: 16px;"></i>Save & Close</button>
+                                                                        <button type="submit" class="btn btn-outline-success mt-2" id="location_continue"> Continue<i class="las la-arrow-right" style="color:green;font-size: 16px;"></i></button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -215,9 +228,6 @@
                                                                         <div class="card-header d-flex justify-content-between">
                                                                             <div class="header-title">
                                                                                 <h6 class="card-title">Set a daily budget that gives your potential customers frequent opportunities to see your ad</h6>
-                                                                            </div>
-                                                                            <div class="custom-switch-inner">
-                                                                            <button type="submit" class="btn btn-outline-link mt-2"> <i class="las la-save" style="color:green;font-size: 32px;"></i> </button>
                                                                             </div>
                                                                         </div>
                                                                         <div class="card-body">
@@ -246,7 +256,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="card-body">
-                                                                                                <input type="date" class="form-control" id="start_date" value="2022-11-18">
+                                                                                                <input type="date" class="form-control" id="start_date">
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="card">
@@ -256,10 +266,14 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="card-body">
-                                                                                                <input type="date" class="form-control" id="end_date" value="2022-11-18">
+                                                                                                <input type="date" class="form-control" id="end_date">
                                                                                             </div>
-                                                                                        </div>      
-                                                                                    </div>
+                                                                                        </div> 
+                                                                                    </div> 
+                                                                                </div>
+                                                                                <div class="custom-switch-inner">
+                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="design_save_and_close"> <i class="las la-save" style="color:green;font-size: 16px;"></i>Save & Close</button>
+                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="design_continue"> Continue<i class="las la-arrow-right" style="color:green;font-size: 16px;"></i></button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -287,15 +301,16 @@
                                                                             <div class="header-title">
                                                                                 <h6 class="card-title">Select the hours that your potential customers will see your ads</h6>
                                                                             </div>
-                                                                            <div class="custom-switch-inner">
-                                                                                <button type="submit" class="btn btn-outline-link mt-2"> <i class="las la-save" style="color:green;font-size: 32px;"></i> </button>
-                                                                            </div>
                                                                         </div>
                                                                         <div class="card-body">
                                                                             <div class="new-user-info">
                                                                                 <div class="row">
                                                                                     <table id="timetable"></table>
                                                                                     <div id="log" class="log" style="display:none;"></div>
+                                                                                </div>
+                                                                                <div class="custom-switch-inner">
+                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="schedule_save_and_close"> <i class="las la-save" style="color:green;font-size: 16px;"></i>Save & Close</button>
+                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="schedule_continue"> Continue<i class="las la-arrow-right" style="color:green;font-size: 16px;"></i></button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -353,27 +368,38 @@
                                                                                                     <span>allowed</span>
                                                                                                     </div>
                                                                                                 </div>
-                                                                                                <button type="submit" class="btn btn-outline-link mt-2" id="animate_design_file" style="display: none;">
-                                                                                                    <i class="las la-photo-video" style="color:green;font-size: 32px;"  title="Animate Image"></i>
-                                                                                                </button>
-                                                                                                <button type="submit" class="btn btn-outline-link mt-2" id="save_design_file" style="display: none;">
-                                                                                                    <i class="las la-file-video" style="color:green;font-size: 32px;" title="Save Video"></i>
-                                                                                                </button>
+
+                                                                                                <div id="channel_panel" style="display: block;">
+                                                                                                    <label for="add1">Channel <i style="color:red;" id="design-dropdown-options">*</i></label>
+                                                                                                        <div class="form-group" id="divisiondrp"></div>
+                                                                                                        <i style="display: none;" id="design-dropdown-channel"></i>
+                                                                                                </div>
+                                                                                                    <div class="custom-switch-inner"  style="display: none;" id="animate_design_btn">
+                                                                                                        <button type="submit" class="btn btn-outline-success mt-2" id="animate_design_file"> <i class="las la-photo-video" style="color:green;font-size: 16px;"></i>Generate Animation</button>
+                                                                                                    </div>
+                                                                                                <div class="custom-switch-inner" id="save_design_file" style="display: none;">
+                                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="design_file_save_and_close"> <i class="las la-file-video" style="color:green;font-size: 16px;"></i>Save & Close</button>
+                                                                                                    <button type="submit" class="btn btn-outline-success mt-2" id="design_file_continue"> <i class="las la-file-video" style="color:green;font-size: 16px;"></i>Continue<i class="las la-arrow-right"></i></button>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group col-md-6">
-                                                                                            <div class="card-header d-flex justify-content-between">
-                                                                                                <div class="header-title">
-                                                                                                    <h6 class="card-title">Preview</h6>
-                                                                                                </div>
+                                                                                        <div class="card-header d-flex justify-content-between">
+                                                                                            <div class="header-title">
+                                                                                                <h6 class="card-title">Preview</h6>
                                                                                             </div>
-                                                                                            <div class="card-body">
-                                                                                                <img class="crm-profile-pic rounded avatar-100" style="height:240px;width: 320px;display: none;" id="previewImg" src="../../../assets/images/user/11.png" alt="Placeholder">
-                                                                                                <video controls muted autoplay style="height:240px;width: 320px;display: none;" id="previewVid" class="crm-profile-pic rounded avatar-100">
-                                                                                                    <source type="video/webm">
-                                                                                                </video>
-                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-body">
+                                                                                            <img class="crm-profile-pic rounded avatar-100" style="height:240px;width: 320px;display: none;" id="previewImg" src="../../../assets/images/user/11.png" alt="Placeholder">
+                                                                                            <video controls muted autoplay style="height:240px;width: 320px;display: none;" id="previewVid" class="crm-profile-pic rounded avatar-100">
+                                                                                                <source type="video/webm">
+                                                                                            </video>
+                                                                                        </div>
+                                                                                        <!--div class="custom-switch-inner">
+                                                                                            <button type="submit" class="btn btn-outline-success mt-2" id="campaign_save_and_close"> <i class="las la-save" style="color:blue;font-size: 16px;font-weight:bolder;"></i>Left</button>
+                                                                                            <button type="submit" class="btn btn-outline-success mt-2" id="campaign_continue"> Right<i class="las la-arrow-right" style="color:blue;font-size: 16px;font-weight: bolder;"></i></button>
+                                                                                        </div-->
                                                                                     </div>
                                                                                     <div class="form-group col-md-12" id="video_panel">
                                                                                         <div class="card-header d-flex justify-content-between">
@@ -395,11 +421,6 @@
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                        </div>
-                                                                                        <div class="card-body" id="channel_panel" style="display: none;">
-                                                                                        <label for="add1">Channel <i style="color:red;" id="design-dropdown-options">*</i></label>
-                                                                                            <div class="form-group" id="divisiondrp"></div>
-                                                                                            <i style="display: none;" id="design-dropdown-channel"></i>
                                                                                         </div>
                                                                                 </div>
                                                                                 </div>
@@ -428,9 +449,6 @@
                                                                             <div class="header-title">
                                                                                 <h6 class="card-title">Request Approval once you have ensured that your campaign is optimized for success</h6>
                                                                             </div>
-                                                                            <button type="submit" class="btn btn-outline-link mt-2">
-                                                                                <i class="las la-save" style="color:green;font-size: 32px;"></i>
-                                                                            </button>
                                                                         </div>
                                                                         <div class="card-body">
                                                                             <div class="new-user-info">
@@ -511,6 +529,10 @@
                                                                                     </div>
                                                                                     <!--END SCHEDULE-->                                                                         
                                                                                 </div>
+                                                                            </div>
+                                                                            <div class="custom-switch-inner">
+                                                                                <button type="submit" class="btn btn-outline-success mt-2" id="review_save_and_close"> <i class="las la-save" style="color:green;font-size: 16px;"></i>Save & Close</button>
+                                                                                <button type="submit" class="btn btn-outline-success mt-2" id="review_continue"> Continue<i class="las la-arrow-right" style="color:green;font-size: 16px;"></i></button>
                                                                             </div>
                                                                         </div>
                                                                     </form>

@@ -18,6 +18,15 @@
       <link rel='stylesheet' href='../assets/vendor/fullcalendar/timegrid/main.css' />
       <link rel='stylesheet' href='../assets/vendor/fullcalendar/list/main.css' />
       <link rel="stylesheet" href="../assets/vendor/mapbox/mapbox-gl.css"> 
+      <link rel="stylesheet" href="../assets/css/schedular.css"> 
+      <style>
+        video {
+            /* override other styles to make responsive */
+            width: 98%   !important;
+            height:auto   !important;
+            margin: 1%
+            }
+      </style>
    </head>
   <body class=" ">
     <!-- loader Start -->
@@ -25,369 +34,268 @@
           <div id="loading-center">
           </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light p-3">
-        <div class="iq-search-bar device-search ">
-            <form>
-                <div class="input-prepend input-append">
-                    <div class="btn-group ">
-                        <label class="dropdown-toggle searchbox " data-toggle="dropdown">
-                        <input id="admin-autocomplete" class="dropdown-toggle search-query text search-input " type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
-                        <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                        <span class="caret"></span>
-                        </label>
-                        <ul class="dropdown-menu" id="admin-autocomplete-results">
-                            <li><a href="#"><div class="item">COMMING SOON ..</div></a></li>
+    <div class="wrapper">
+        <div class="two-sidebar sidebar-1  sidebar-default ">
+            <div class="iq-sidebar-small">
+                <div class="sidebar-top">
+                    <div class="iq-sidebar-small-logo">
+                        <a href="../backend/index.html">
+                        <img src="../assets/images/logo.png" class="img-fluid" alt="logo">
+                        </a>
+                    </div>
+                    <div class="iq-loader-box" id="b-loader" style="display: none;">
+                        <div class="iq-loader-13" style="color:blue;"></div>
+                    </div>
+                    <div class="sidebar-menu-icon" style="margin-top: 300px;">
+                        <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
+                            <li class="nav-item d-block active">
+                                <a  href="#project-pan" role="tab" aria-selected="false">                            
+                                    <i class="las la-chevron-circle-right" style="color:#062B78;font-size: 36px;font-weight: bold;"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="iq-sidebar">
+                <div class="data-scrollbar" data-scroll="1">
+                    <nav class="iq-sidebar-menu">
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="project-pan" role="tabpanel">                       
+                                <ul  id="videos" class="iq-menu list-inline m-0 mb-3 px-3">
+                                    <li class=" ">                            
+                                        <a href="#campaign">
+                                            <span>PlayList</span>
+                                        </a>
+                                    </li>
+                                 
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="p-3"></div>
+                </div>
+            </div>
         </div>
-        <!--DO MORE-->
-    </nav>
-<div class="container-fluid ">
-     <div class="container-fluid ">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card border-none">
-                    <div class="card-body custom-card-space">
-                        <ul class="nav nav-pills tab-pills body-tab-pills" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="pill" href="#home" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#campaign" role="tab" aria-controls="backups" aria-selected="false" id="load-campaigns" >Campaigns</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#preview" role="tab" aria-controls="backups" aria-selected="false" id="load-preview" >Preview</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="pill" href="#profile" role="tab" aria-controls="snapshots" aria-selected="false" id="load-agents">Profile</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content task-content create-droplet">
-
-                            <div class="iq-loader-box" id="b-loader" style="display: none;">
-                                <div class="iq-loader-13"></div>
+        <div class="iq-top-navbar">
+            <div class="iq-navbar-custom">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <div class="iq-search-bar device-search">
+                        <form>
+                            <div class="input-prepend input-append">
+                                <div class="btn-group ">
+                                    <label class="dropdown-toggle searchbox " data-toggle="dropdown">
+                                    <input id="admin-autocomplete" class="dropdown-toggle search-query text search-input " type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
+                                    <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                                    <span class="caret"></span>
+                                    </label>
+                                    <ul class="dropdown-menu" id="admin-autocomplete-results">
+                                        <li><a href="#"><div class="item">COMMING SOON ..</div></a></li>
+                                    </ul>
+                                </div>
                             </div>
-
-                            <div class="tab-pane fade show active" id="home" role="tabpanel">                     
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" >
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                            <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                                                <div class="container mt-2">
-                                                                    <div class="row" id="videos">
-                                                                       <div class="col-lg-4">
-                                                                             <div class="card text-center">
-                                                                                <div class="card-body" id="videos">
-                                                                                   <i class="ri-window-line ri-4x line-height text-primary"></i>
-                                                                                   <h6 class="card-title mt-1">CREATE A CAMPAIGN</h6>
-                                                                                </div>
-                                                                             </div>
-                                                                       </div>
-                                                                    </div>
-                                                                 </div>
-                                                            </div>
-                                                        </div>
+                        </form>
+                    </div>
+                    <div class="">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-label="Toggle navigation">
+                            <i class="ri-menu-3-line"></i>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                                <li class="nav-item nav-icon search-content">
+                                    <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="ri-search-line"></i>
+                                    </a>
+                                    <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                        <form action="#" class="searchbox p-2">
+                                            <div class="form-group mb-0 position-relative">
+                                                <input type="text" class="text search-input font-size-12"
+                                                    placeholder="type here to search...">
+                                                <a href="#" class="search-link"><i class="las la-search"></i></a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2 border-left">
+                                    <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <div class="d-flex align-items-center">
+                                            <img src="../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user" id="admin-profile-image">
+                                            <div class="caption ml-3">
+                                                <h6 class="mb-1" id="admin-usernames"></h6>
+                                                <p class="text-body mb-0" id="admin-email"></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <div class="card shadow-none m-0">
+                                            <div class="card-body p-0 text-center">
+                                             
+                                                <div class="p-3">
+                                                    <h6 class="mb-1" style="display: none;"></h6>
+                                                    <p class="mb-0" id="admin-creation-date"></p>
+                                                    <div class="d-flex align-items-center justify-content-center mt-3">
+                                                        <a href="profile/" class="btn border mr-2">Profile</a>
+                                                        <a href="../" class="btn border">Sign Out</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- INFO-->
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" id="load-budget-results">
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                            <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                                                <div class="container mt-3">
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                                <div class="card text-center">
-                                                                                <div class="card-body">
-                                                                                    <i class="ri-window-line ri-4x line-height text-primary"></i>
-                                                                                    <h6 class="card-title mt-1">What is a Campaign?</h6>
-                                                                                    <!--p class="mb-0">It is the entire process of creating an advert.It involves selecting the right billboard , daily budget , schedule , design and review for your advert.</p-->
-                                                                                </div>
-                                                                                </div>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                                <div class="card text-center">
-                                                                                <div class="card-body">
-                                                                                    <i class="ri-time-line ri-4x line-height text-primary"></i>
-                                                                                    <h6 class="card-title mt-1">What is Approval?</h6>
-                                                                                    <!--p class="mb-0">Campaigns must be reviewed and can only become adverts if approved.This usually takes no more than 24 hours from the time of submission.</p-->
-                                                                                </div>
-                                                                                </div>
-                                                                        </div>
-                                                                        <div class="col-lg-4">
-                                                                                <div class="card text-center">
-                                                                                <div class="card-body">
-                                                                                    <i class="ri-information-line ri-4x line-height text-primary"></i>
-                                                                                    <h6 class="card-title mt-1">What is a Smart Billboard?</h6>
-                                                                                    <!--p class="mb-0">These are cheaper billboards that target , engage and give feedback about your potential customers.Select channel suited for your advertisement. </p-->
-                                                                                </div>
-                                                                                </div>
-                                                                        </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="content-page">
+            <div class="container-fluid ">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card border-none">
+                            <div class="card-body custom-card-space">
+                                <ul class="nav nav-pills tab-pills body-tab-pills" id="pills-tab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#home" role="tab" aria-controls="distributions" aria-selected="true" id="load-home">Home</a>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tab-content task-content create-droplet">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel">
+                                        <form id="create_advert" method="post">
+                                        
+                                            <!--VIDEO-->                     
+                                            <div class="card border-none bg-body">
+                                                <div class="card-body custom-card-space">
+                                                    <div class="card border-none">
+                                                        <div class="card-body custom-card-space ">
+                                                            <div class="row" >
+                                                                <h6 class="card-title">Design</h6>
+                                                                <div class="col-xl-12">
+                                                                    <div class="row" >
+                                                                        <video controls muted poster="" style="height:240px;width: 320px;display: none;" id="design_detail" class="crm-profile-pic rounded avatar-100">
+                                                                            <source type="video/webm">
+                                                                        </video>
                                                                     </div>
-                                                                    </div>
-
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--END INFO-->
-                            </div>
-
-                            <div class="tab-pane fade" id="profile" role="tabpanel">
-                                <!--PROFILE-->
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" id="load-budget-results">
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <div class="header-title">
-                                                                <h6 class="card-title">Account</h6>
+                                            <!--CAMPAIGN-->
+                                            <div class="card border-none bg-body">
+                                                <div class="card-body custom-card-space">
+                                                    <div class="card border-none">
+                                                        <div class="card-body custom-card-space ">
+                                                            <div class="row" >
+                                                                <h6 class="card-title">Campaign</h6>
+                                                                <div class="col-xl-12">
+                                                                    <div class="row" >
+                                                                        <div id="campaign_detail"></div>
+                                                                        
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="card-body">
-                                                            <div class="new-user-info">
-                                                                <div class="row">
-                                                                    <div class="card col-md-6">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--LOCATIONS-->
+                                            <div class="card border-none bg-body">
+                                                <div class="card-body custom-card-space">
+                                                    <div class="card border-none">
+                                                        <div class="card-body custom-card-space ">
+                                                            <div class="row" >
+                                                                <h6 class="card-title">Location</h6>
+                                                                <div class="col-xl-12">
+                                                                    <div class="row" >
+                                                                        <div   id="locations_detail"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--BUDGET-->
+                                            <div class="card border-none bg-body">
+                                                <div class="card-body custom-card-space">
+                                                    <div class="card border-none">
+                                                        <div class="card-body custom-card-space ">
+                                                            <div class="row" >
+                                                                <h6 class="card-title">Budget</h6>
+                                                                <div class="col-xl-12">
+                                                                    <div class="row" >
+                                                                        <div  id="budget_detail"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-header d-flex justify-content-between">
+                                                <div class="header-title">
+                                                    <h6 class="card-title">Accept or Reject Ad Campaign</h6>
+                                                </div>
+                                                <div class="custom-switch-inner">
+                                                    <button type="submit" class="btn btn-outline-success mt-2" id="campaign_save_and_close"><i class="las la-check-square" style="color:green;font-size: 16px;"></i>Accept</button>
+                                                    <button type="submit" class="btn btn-outline-success mt-2" id="campaign_continue"><i class="las la-window-close"  style="color:red;font-size: 16px;" ></i>Reject</button>
+                                                </div>
+                                            </div>
+                                            <!--SCHEDULE-->
+                                            <div class="card border-none bg-body" style="display: none;">
+                                                <div class="card-body custom-card-space">
+                                                    <div class="card border-none">
+                                                        <div class="card-body custom-card-space ">
+                                                            <div class="row" >
+                                                                <div class="col-xl-12">
+                                                                    <div class="row" >
                                                                         <div class="card-header d-flex justify-content-between">
                                                                             <div class="header-title">
-                                                                                <h6 class="card-title">Username & Password </i></h6>
+                                                                                <h6 class="card-title">Schedule</h6>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="card-body">
-                                                                            <div class="form-group ">
-                                                                                <div class="d-flex align-items-center">
-                                                                                    <img src="../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user" id="admin-profile-image">
-                                                                                    <div class="caption ml-3">
-                                                                                        <h6 class="mb-1" id="admin-usernames"></h6>
-                                                                                        <p class="text-body mb-0" id="admin-email"></p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group col-md-6">
-                                                                            <div class="card-header d-flex justify-content-between">
-                                                                                <div class="header-title">
-                                                                                    <h6 class="card-title">Authentication</h6>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-body">
-                                                                                <div class="card-body p-0 text-center">
-                                                                                    <div class="p-3">
-                                                                                        <h6 class="mb-1" style="display: none;"></h6>
-                                                                                        <p class="mb-0" id="admin-creation-date"></p>
-                                                                                        <div class="d-flex align-items-center justify-content-center mt-3">
-                                                                                            <a href="profile/" class="btn border mr-2">Profile</a>
-                                                                                            <a href="../auth/login/" class="btn border">Sign Out</a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+                                                                        <table id="schedule_detail"></table>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="campaign" role="tabpanel">
-                                <!--LOCATIONS-->
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" id="load-budget-results">
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                            <form id="create_campaign" method="post">
-                                                                <div class="card-header d-flex justify-content-between">
-                                                                    <div class="header-title">
-                                                                        <h6 class="card-title">Create Ad Campaign</h6>
-                                                                    </div>
-                                                                    <div class="custom-switch-inner">
-                                                                        <button type="submit" class="btn btn-outline-link mt-2" id="create_campaign-btn"><i class="las la-save" style="color:green;font-size: 32px;"></i></button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <div class="new-user-info">
-                                                                        <div class="row">
-                                                                            <!--CAMPAIGS-->
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="pno">Name <i style="color:red;">*</i>:</label>
-                                                                                <input type="text" class="form-control" id="campaign_name" placeholder="Say No To Violence" required>
-                                                                            </div>
-                                                                            <div class="form-group col-md-6">
-                                                                                <label for="add1">Category<i style="color:red;">*</i>:</label>
-                                                                                    <select name="campaign_category" id="campaign_category" class="selectpicker form-control" data-style="py-0">
-                                                                                    <option>Food & Beverage</option>
-                                                                                    <option>Footwear & Shoes</option>
-                                                                                    <option>Clothing & Apparel</option>
-                                                                                    <option>Electronics & Gadgets</option>
-                                                                                    <option>Games & Toys</option>
-                                                                                    <option>Veterinary & Pet Items</option>
-                                                                                    <option>Stationery</option>
-                                                                                    <option>Hand & Power Tools</option>
-                                                                                    <option>Tupperware</option>
-                                                                                    <option>Furniture</option>
-                                                                                    <option>Sports Products</option>
-                                                                                    <option>Real Estate and Rentals</option>
-                                                                                    <option>Office Equipment and Supplies</option>
-                                                                                    </select>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="preview" role="tabpanel">
-                                <!--REVIEW-->
-                                <div class="card border-none bg-body">
-                                    <div class="card-body custom-card-space" >
-                                        <div class="card border-none">
-                                            <div class="card-body custom-card-space ">
-                                                <div class="row" id="load-budget-results">
-                                                    <div class="col-xl-12">
-                                                        <div class="card">
-                                                            <form id="create_advert" method="post" enctype="multipart/form-data">
-                                                                <div class="card-header d-flex justify-content-between">
-                                                                    <div class="header-title">
-                                                                        <h6 class="card-title">Request Approval once you have ensured that your campaign is optimized for success</h6>
-                                                                    </div>
-                                                                    <button type="submit" class="btn btn-outline-link mt-2">
-                                                                        <i class="las la-save" style="color:green;font-size: 32px;"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <div class="new-user-info">
-                                                                        <div class="row">
-                                                                            <!--NAME-->
-                                                                            <div class="form-group col-md-8">
-                                                                                <div class="card">
-                                                                                    <div class="card-header d-flex justify-content-between">
-                                                                                        <div class="header-title">
-                                                                                            <h6 class="card-title">Campaign</h6>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="card-body"  id="campaign_detail"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--END NAME-->
-                                                                            <!--LOCATIONS-->
-                                                                            <div class="form-group col-md-8">
-                                                                                <div class="card">
-                                                                                    <div class="card-header d-flex justify-content-between">
-                                                                                        <div class="header-title">
-                                                                                            <h6 class="card-title">Locations</h6>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="card-body"  id="locations_detail"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--END LOCATIONS-->
-                                                                            <!--BUDGET-->                                                                         
-                                                                            <div class="form-group col-md-8">
-                                                                                <div class="card">
-                                                                                    <div class="card-header d-flex justify-content-between">
-                                                                                        <div class="header-title">
-                                                                                            <h6 class="card-title">Budget</h6>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="card-body"  id="budget_detail"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--END BUDGET-->
-                                                                            <!--DESIGN-->
-                                                                            <div class="form-group col-md-8">
-                                                                                <div class="card">
-                                                                                    <div class="card-header d-flex justify-content-between">
-                                                                                        <div class="header-title">
-                                                                                            <h6 class="card-title">Design</h6>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="card-body">
-                                                                                        <div class="new-user-info">
-                                                                                            <div class="row">
-                                                                                                <video controls muted poster="" style="height:240px;width: 320px;display: none;" id="design_detail" class="crm-profile-pic rounded avatar-100">
-                                                                                                    <source type="video/webm">
-                                                                                                    </video>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--END DESIGN--> 
-                                                                            <!--SHEDULE-->                                                                         
-                                                                            <div class="form-group col-md-12">
-                                                                                <div class="card">
-                                                                                    <div class="card-header d-flex justify-content-between">
-                                                                                        <div class="header-title">
-                                                                                            <h6 class="card-title">Schedule</h6>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="card-body">
-                                                                                        <div class="new-user-info">
-                                                                                            <div class="row">
-                                                                                                <table id="schedule_detail"></table>
-                                                                                     
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!--END SCHEDULE-->                                                                         
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                         
+                                            <!--END INFO-->
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Page end  -->
             </div>
         </div>
-        <!-- Page end  -->
     </div>
-    </div>
+    <footer class="iq-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SWS</a>.
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- Backend Bundle JavaScript -->
     <script src="../assets/js/backend-bundle.min.js"></script>
