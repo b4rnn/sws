@@ -100,11 +100,11 @@ $(document).ready(function() {
         });
     });
    
-    //CREATE BILLBOARDS
     $("#create-billboard").bind('submit', function(e) {
         e.preventDefault();
         var reader                  = new FileReader();
         var name                    = $('#name').val();
+        var agency_name             = $('#agency_name').val();
 		var sign_placement          = $('select[name=sign_placement] option').filter(':selected').val();
         var traffic_direction       = $('select[name=traffic_direction] option').filter(':selected').val();
         var availability            = $('select[name=availability] option').filter(':selected').val();
@@ -141,7 +141,7 @@ $(document).ready(function() {
                 method: "POST",
                 url: ip_address+'/api/billboard/create',
                 contentType: 'application/json;charset=UTF-8',
-                data: JSON.stringify({'name': name, 'sign_placement': sign_placement, 'traffic_direction': traffic_direction, 'availability': availability, 'dimension_width': dimension_width , 'dimension_height': dimension_height, 'duration': duration, 'status': status, 'capacity': capacity, 'ip_address': edge_ip_address, 'screen_count': screen_count, 'city': city, 'state': state, 'county': county, 'country': country, 'zip': zip, 'latitude': latitude, 'longitude': longitude, 'daily_views':daily_views, 'file': base64String ,'extension': extension ,'id':uid}),
+                data: JSON.stringify({'name': name, 'sign_placement': sign_placement, 'traffic_direction': traffic_direction, 'availability': availability, 'dimension_width': dimension_width , 'dimension_height': dimension_height, 'duration': duration, 'status': status, 'capacity': capacity, 'ip_address': edge_ip_address, 'screen_count': screen_count, 'city': city, 'state': state, 'county': county, 'country': country, 'zip': zip, 'latitude': latitude, 'longitude': longitude, 'daily_views':daily_views, 'file': base64String ,'extension': extension ,'id':uid ,'agency_name':agency_name}),
                 dataType: "json",
                 cache: false,
                 processData: false,
