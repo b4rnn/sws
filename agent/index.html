@@ -3,7 +3,7 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>SWS | AGENT PORTAL</title>
+      <title>stroberi | agent</title>
       <!-- Favicon -->
       <link rel="shortcut icon" href="../assets/images/favicon.ico" />
       <link rel="stylesheet" href="../assets/css/backend-plugin.min.css">
@@ -20,11 +20,27 @@
       <link rel="stylesheet" href="../assets/vendor/mapbox/mapbox-gl.css"> 
       <link rel="stylesheet" href="../assets/css/schedular.css"> 
       <style>
-        video {
+        .map {
             /* override other styles to make responsive */
             width: 98%   !important;
             height:auto   !important;
             margin: 1%
+            }
+        
+        video {
+            /* override other styles to make responsive */
+            width: 98%   !important;
+            margin: 1%;
+            height:auto !important;
+            aspect-ratio: 21 / 9;
+            }
+        
+        .playlist {
+            /* override other styles to make responsive */
+            width: 98%   !important;
+            height:98%   !important;
+            margin: 1%;
+            object-fit: fill;
             }
       </style>
    </head>
@@ -34,269 +50,424 @@
           <div id="loading-center">
           </div>
     </div>
+
     <div class="wrapper">
-        <div class="two-sidebar sidebar-1  sidebar-default ">
-            <div class="iq-sidebar-small">
-                <div class="sidebar-top">
-                    <div class="iq-sidebar-small-logo">
-                        <a href="../backend/index.html">
-                        <img src="../assets/images/logo.png" class="img-fluid" alt="logo">
-                        </a>
-                    </div>
-                    <div class="iq-loader-box" id="b-loader" style="display: none;">
-                        <div class="iq-loader-13" style="color:blue;"></div>
-                    </div>
-                    <div class="sidebar-menu-icon" style="margin-top: 300px;">
-                        <ul class="nav nav-pills list-inline m-0 p-0" id="icon-pills-tab" role="tablist">
-                            <li class="nav-item d-block active">
-                                <a  href="#project-pan" role="tab" aria-selected="false">                            
-                                    <i class="las la-chevron-circle-right" style="color:#062B78;font-size: 36px;font-weight: bold;"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="iq-sidebar">
-                <div class="data-scrollbar" data-scroll="1">
-                    <nav class="iq-sidebar-menu">
-                        <div class="tab-content">
-                            <div class="tab-pane fade active show" id="project-pan" role="tabpanel">                       
-                                <ul  id="videos" class="iq-menu list-inline m-0 mb-3 px-3">
-                                    <li class=" ">                            
+        <div  style="padding: 15px 15px 0px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="card border-none" style="max-height : 100vh;overflow-y: scroll;">
+                            <div class="card-body" >
+                                <ul  id="videos" class="iq-menu list-inline">
+                                    <li class="loadEdge">                            
                                         <a href="#campaign">
                                             <span>PlayList</span>
                                         </a>
                                     </li>
-                                 
                                 </ul>
                             </div>
                         </div>
-                    </nav>
-                    <div class="p-3"></div>
-                </div>
-            </div>
-        </div>
-        <div class="iq-top-navbar">
-            <div class="iq-navbar-custom">
-                <nav class="navbar navbar-expand-lg navbar-light p-0">
-                    <div class="iq-search-bar device-search">
-                        <form>
-                            <div class="input-prepend input-append">
-                                <div class="btn-group ">
-                                    <label class="dropdown-toggle searchbox " data-toggle="dropdown">
-                                    <input id="admin-autocomplete" class="dropdown-toggle search-query text search-input " type="text"  placeholder="Type here to search..."><span class="search-replace"></span>
-                                    <a class="search-link" href="#"><i class="ri-search-line"></i></a>
-                                    <span class="caret"></span>
-                                    </label>
-                                    <ul class="dropdown-menu" id="admin-autocomplete-results">
-                                        <li><a href="#"><div class="item">COMMING SOON ..</div></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </form>
                     </div>
-                    <div class="">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-label="Toggle navigation">
-                            <i class="ri-menu-3-line"></i>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ml-auto navbar-list align-items-center">
-                                <li class="nav-item nav-icon search-content">
-                                    <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        <i class="ri-search-line"></i>
-                                    </a>
-                                    <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
-                                        <form action="#" class="searchbox p-2">
-                                            <div class="form-group mb-0 position-relative">
-                                                <input type="text" class="text search-input font-size-12"
-                                                    placeholder="type here to search...">
-                                                <a href="#" class="search-link"><i class="las la-search"></i></a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </li>
-                                <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2 border-left">
-                                    <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/user/1.png" class="img-fluid avatar-40 rounded" alt="user" id="admin-profile-image">
-                                            <div class="caption ml-3">
-                                                <h6 class="mb-1" id="admin-usernames"></h6>
-                                                <p class="text-body mb-0" id="admin-email"></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <div class="card shadow-none m-0">
-                                            <div class="card-body p-0 text-center">
-                                             
-                                                <div class="p-3">
-                                                    <h6 class="mb-1" style="display: none;"></h6>
-                                                    <p class="mb-0" id="admin-creation-date"></p>
-                                                    <div class="d-flex align-items-center justify-content-center mt-3">
-                                                        <a href="profile/" class="btn border mr-2">Profile</a>
-                                                        <a href="../" class="btn border">Sign Out</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <div class="content-page">
-            <div class="container-fluid ">
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-9">
                         <div class="card border-none">
                             <div class="card-body custom-card-space">
-                                <ul class="nav nav-pills tab-pills body-tab-pills" id="pills-tab" role="tablist">
+                                <ul class="nav nav-pills tab-pills body-tab-pills " id="pills-tab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="pill" href="#home" role="tab" aria-controls="distributions" aria-selected="true" id="load-home">Home</a>
+                                        <a class="nav-link active" data-toggle="pill" href="#locations" role="tab" aria-controls="distributions" aria-selected="true" id="load-billboards">Edge Computer</a>
                                     </li>
-                                </ul>
-                                
-                                <div class="tab-content task-content create-droplet">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel">
-                                        <form id="create_advert" method="post">
-                                        
-                                            <!--VIDEO-->                     
-                                            <div class="card border-none bg-body">
-                                                <div class="card-body custom-card-space">
-                                                    <div class="card border-none">
-                                                        <div class="card-body custom-card-space ">
-                                                            <div class="row" >
-                                                                <h6 class="card-title">Design</h6>
-                                                                <div class="col-xl-12">
-                                                                    <div class="row" >
-                                                                        <video controls muted poster="" style="height:240px;width: 320px;display: none;" id="design_detail" class="crm-profile-pic rounded avatar-100">
-                                                                            <source type="video/webm">
-                                                                        </video>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#snapshots" role="tab" aria-controls="snapshots" aria-selected="false" id="load-design">Billboard</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#review" role="tab" aria-controls="backups" aria-selected="false" id="load-review" >Summary</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link"  aria-selected="false" href="../admin/billboards/"><i class="las la-long-arrow-alt-right" style="color: blue;" title="Create New Billboard"></i></a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <button type="button" id="billboard_status" class="btn btn-primary mt-2" data-toggle="modal" data-target="#status_success" style="display: none;"></button>
+                                    </li>
+                                    
+                                    <ul class="navbar-nav ml-auto navbar-list align-items-center">
+        
+                                        <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2">
+                                            <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton4"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="../assets/images/user/1.png"   style="border-radius:50%;width: 50px;height: 50px;" alt="user" id="admin-profile-image">
+                                    
+                                                </div>
+                                            </a>
+                                            <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-left: -200px;">
+                                                <div class="card-body">
+                                                    
+                                                    <div class="p-1">
+                                                        <div class="caption ml-3">
+                                                            <h6 class="mb-1" id="admin-usernames"></h6>
+                                                            <p class="text-body mb-0" id="admin-email"></p>
+                                                        </div>
+                                                        <div class="d-flex align-items-center justify-content-center mt-3">
+                                                            <a href="../auth/login/" >Sign Out</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--CAMPAIGN-->
-                                            <div class="card border-none bg-body">
-                                                <div class="card-body custom-card-space">
-                                                    <div class="card border-none">
-                                                        <div class="card-body custom-card-space ">
-                                                            <div class="row" >
-                                                                <h6 class="card-title">Campaign</h6>
-                                                                <div class="col-xl-12">
-                                                                    <div class="row" >
-                                                                        <div id="campaign_detail"></div>
+                                        </li>
+                                    </ul>
+                                </ul>  
+
+                                <div class="tab-content task-content create-droplet" >
+
+                                    <div class="iq-loader-box" id="b-loader" style="display: none;">
+                                        <div class="iq-loader-13" style="color:blue;"></div>
+                                    </div>
+                              
+                                    <div class="tab-pane fade show active " id="locations" role="tabpanel">  
+                                        <!--VIDEO-->                     
+                                        <div class="card border-none bg-body">
+                                            <div class="card-body">
+                                                <div class="row" >
+                                                    <div class="col-xl-12">
+                                                        <div class="row">
+                                                            <video controls muted poster=""  id="design_detail" class="crm-profile-pic rounded avatar-100">
+                                                                <source type="video/webm">
+                                                            </video>
+                                                        </div>
+                                                        <ul class="navbar-nav ml-auto navbar-list align-items-center">
+
+                                                            <li class="nav-item nav-icon dropdown caption-content pl-2 ml-2">
+                                                                <a href="#"  id="dropdownMenuButton4"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <i class="las la-ellipsis-v" style="font-size:24px;color:blue;"></i>
+                                                                    </div>
+                                                                </a>
+                                                                <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-left: -65px;">
+                                                                    <div class="card-body" id="popup" >
                                                                         
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
+                                                            </li>
+                                                        </ul>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <!--LOCATIONS-->
-                                            <div class="card border-none bg-body">
-                                                <div class="card-body custom-card-space">
-                                                    <div class="card border-none">
-                                                        <div class="card-body custom-card-space ">
-                                                            <div class="row" >
-                                                                <h6 class="card-title">Location</h6>
-                                                                <div class="col-xl-12">
-                                                                    <div class="row" >
-                                                                        <div   id="locations_detail"></div>
-                                                                    </div>
+                                                    
+                                                    <div class="col-xl-12">
+                                                        <div class="row" >
+                                                            <div   id="locations_detail"></div>
+                                                            <div class="custom-control custom-switch custom-switch-text custom-control-inline" style="margin-left: 90%;margin-top: -85px;">
+                                                                <div class="custom-switch-inner">
+                                                                    <input type="checkbox" class="custom-control-input" id="customSwitch-12" checked="">
+                                                                    <label id="edge_switch"  class="custom-control-label" for="customSwitch-12" data-on-label="Yes" data-off-label="No" title="Approve Campaign for Advertisement">
+                                                                    </label>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <!--BUDGET-->
-                                            <div class="card border-none bg-body">
-                                                <div class="card-body custom-card-space">
-                                                    <div class="card border-none">
-                                                        <div class="card-body custom-card-space ">
-                                                            <div class="row" >
-                                                                <h6 class="card-title">Budget</h6>
-                                                                <div class="col-xl-12">
-                                                                    <div class="row" >
-                                                                        <div  id="budget_detail"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                    <div class="col-xl-5">
+                                                        <div class="row" >
+                                                            <div id="campaign_detail"></div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                        <div class="row" >
+                                                            <div  id="budget_detail"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="card-header d-flex justify-content-between">
-                                                <div class="header-title">
-                                                    <h6 class="card-title">Accept or Reject Ad Campaign</h6>
-                                                </div>
-                                                <div class="custom-switch-inner">
-                                                    <button type="submit" class="btn btn-outline-success mt-2" id="campaign_save_and_close"><i class="las la-check-square" style="color:green;font-size: 16px;"></i>Accept</button>
-                                                    <button type="submit" class="btn btn-outline-success mt-2" id="campaign_continue"><i class="las la-window-close"  style="color:red;font-size: 16px;" ></i>Reject</button>
-                                                </div>
-                                            </div>
-                                            <!--SCHEDULE-->
-                                            <div class="card border-none bg-body" style="display: none;">
-                                                <div class="card-body custom-card-space">
-                                                    <div class="card border-none">
-                                                        <div class="card-body custom-card-space ">
-                                                            <div class="row" >
-                                                                <div class="col-xl-12">
-                                                                    <div class="row" >
+                                        </div>
+                                        <!--END VIDEO-->
+                                    </div>
+                                    <div class="tab-pane fade" id="snapshots" role="tabpanel">
+                                        <!--DESIGN-->
+                                        <div class="card border-none bg-body">
+                                            <div class="card-body custom-card-space" style="max-height : 80vh;overflow-y: scroll;">
+                                                <div class="card border-none">
+                                                    <div class="card-body custom-card-space" >
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="card">
+                                                                    <form id="save_design" method="post" enctype="multipart/form-data">
                                                                         <div class="card-header d-flex justify-content-between">
                                                                             <div class="header-title">
-                                                                                <h6 class="card-title">Schedule</h6>
+                                                                                <h6 class="card-title" >Choose High Quality Billboard Photo</h6>
+                                                                            </div>
+                                                                            
+                                                                            <i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Billboard Name"></i>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="new-user-info">
+                                                                                <div class="row">
+                                                                                    <div class="card col-md-6">
+                                                                                        <div class="card-header d-flex justify-content-between">
+                                                                                            <div class="header-title">
+                                                                                                <h6 class="card-title">File</h6>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="card-body">
+                                                                                            <div class="form-group ">
+                                                                                                <div class="crm-profile-img-edit position-relative">
+                                                                                                    <img class="svg-icon" height="140" width="232"  src="../assets/images/user/11.png" alt="profile-pic" id="billboard-pic">
+                                                                                                    <div class="crm-p-image bg-primary">
+                                                                                                        <i class="las la-pen upload-button"></i>
+                                                                                                        <input class="file-upload" type="file" id ="file" accept="image/*" onchange="previewFile(this);">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="img-extension mt-3">
+                                                                                                    <div class="d-inline-block align-items-center">
+                                                                                                            <span>Only</span>
+                                                                                                        <a href="javascript:void();">.jpg</a>
+                                                                                                        <a href="javascript:void();">.png</a>
+                                                                                                        <a href="javascript:void();">.jpeg</a>
+                                                                                                        <span>allowed</span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group col-md-6">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Preview</h6>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="card-body">
+                                                                                                <img class="crm-profile-pic rounded avatar-100" style="height:240px;width: 320px;display: none;" id="previewImg" src="../assets/images/user/11.png" alt="Placeholder">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="form-group col-md-6">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Height</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_height" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Height"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="height"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END HEIGHT-->   
+                                                                                    <div class="form-group col-md-6">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">width</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_width" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Width"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="width"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END WIDTH-->    
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                        <table id="schedule_detail"></table>
-                                                                    </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                         
-                                            <!--END INFO-->
-                                        </form>
+                                        </div>
                                     </div>
+                                    <div class="tab-pane fade" id="review" role="tabpanel">
+                                        <!--REVIEW-->
+                                        <div class="card border-none bg-body">
+                                            <div class="card-body custom-card-space" style="max-height : 80vh;overflow-y: scroll;">
+                                                <div class="card border-none">
+                                                    <div class="card-body custom-card-space" >
+                                                        <div class="row" id="load-budget-results">
+                                                            <div class="col-xl-12">
+                                                                <div class="card">
+                                                                    <form id="save_review" method="post" enctype="multipart/form-data">
+                                                                        <div class="card-header d-flex justify-content-between">
+                                                                            <div class="header-title">
+                                                                                <h6 class="card-title">Review or Update Billboard</h6>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card-body">
+                                                                            <div class="new-user-info">
+                                                                                <div class="row">
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">AGENCY</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_agency" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Agency Name"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="agency"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END AGENCY-->  
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Name</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_name" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Billboard Name"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="name"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END NAME-->                                                                                    
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Sign Placemet</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_sign_placement" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Sign Placement"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="sign_placement"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END SIGN PLACEMENT-->                                                                 
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Traffic Direction</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_traffic_direction" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Traffic Direction"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="traffic_direction"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END TD-->                                                                           
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Availability</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_availabilty" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Availability"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="availability"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END AVAILABILTY-->
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Daily Views</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_views" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Daily Views"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="views"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END DAILY VIEWS-->  
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Duration</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_duration" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Duration"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="duration"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END DURATION-->                                                                                      
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">City</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_city" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit City"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="city"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END CITY-->  
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">State</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_state" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit State"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="state"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END STATE-->  
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">County</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_county" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit County"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="county"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END COUNTY-->   
+                                                                                    <div class="form-group col-md-8">
+                                                                                        <div class="card">
+                                                                                            <div class="card-header d-flex justify-content-between">
+                                                                                                <div class="header-title">
+                                                                                                    <h6 class="card-title">Zip</h6>
+                                                                                                </div>
+                                                                                                <h6 class="card-title" id="edit_zip" ></h6><i class="las la-pen " style="color:black;font-size: 16px;" title="Edit Zip"></i>
+                                                                                            </div>
+                                                                                            <div class="card-body"  id="zip"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!--END ZIP-->                              
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--NOTIFICATION-->
+                                    <a href="#" class="btn btn-sm btn-primary line-height rounded" style="display: none;" data-toggle="alert" data-message="Enabled successfully" id="edge_status" ></a>
                                 </div>
+                            </div>
+                            <!--NOTIFICATION-->
+                            <a href="#" class="btn btn-sm btn-primary line-height rounded" style="display: none;" data-toggle="alert" data-message="Enabled successfully" id="status_success" ></a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Page end  -->
+                <!--footer class="iq-footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                                    <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SWS</a>.
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Page end  -->
+                </footer-->
             </div>
         </div>
     </div>
-    <footer class="iq-footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 text-right">
-                    <span class="mr-1"><script>document.write(new Date().getFullYear())</script>©</span> <a href="#" class="">SWS</a>.
-                </div>
-            </div>
-        </div>
-    </footer>
+
     <!-- Backend Bundle JavaScript -->
     <script src="../assets/js/backend-bundle.min.js"></script>
     
@@ -347,5 +518,6 @@
 
     <!-- app JavaScript -->
     <script src="../assets/apis/agent.js"></script>
+    <script src="../assets/apis/schedular.js"></script>
   </body>
 </html>
