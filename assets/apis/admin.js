@@ -62,48 +62,68 @@ $(document).ready(function() {
             if (data.status==200){
                 for(i in data.msg){
                     result +='<div class="p-1">'
-                    +'<img id="'+data.msg[i].billboard_name+'" title="See On Map" onclick="queryMap(this)" alt="check" class="svg-icon" height="100" width="150" src="'+data.msg[i].billboard_image+'" >'
+                    +'<img id="'+data.msg[i].billboard_name+'"  title="'+data.msg[i].billboard_owner_name+'" onclick="queryMap(this)" class="svg-icon" height="120" width="240" src="'+data.msg[i].billboard_image+'" >'
                     +'<path fill-rule="evenodd" d="M9.504 1.132a1 1 0 01.992 0l1.75 1a1 1 0 11-.992 1.736L10 3.152l-1.254.716a1 1 0 11-.992-1.736l1.75-1zM5.618 4.504a1 1 0 01-.372 1.364L5.016 6l.23.132a1 1 0 11-.992 1.736L4 7.723V8a1 1 0 01-2 0V6a.996.996 0 01.52-.878l1.734-.99a1 1 0 011.364.372zm8.764 0a1 1 0 011.364-.372l1.733.99A1.002 1.002 0 0118 6v2a1 1 0 11-2 0v-.277l-.254.145a1 1 0 11-.992-1.736l.23-.132-.23-.132a1 1 0 01-.372-1.364zm-7 4a1 1 0 011.364-.372L10 8.848l1.254-.716a1 1 0 11.992 1.736L11 10.58V12a1 1 0 11-2 0v-1.42l-1.246-.712a1 1 0 01-.372-1.364zM3 11a1 1 0 011 1v1.42l1.246.712a1 1 0 11-.992 1.736l-1.75-1A1 1 0 012 14v-2a1 1 0 011-1zm14 0a1 1 0 011 1v2a1 1 0 01-.504.868l-1.75 1a1 1 0 11-.992-1.736L16 13.42V12a1 1 0 011-1zm-9.618 5.504a1 1 0 011.364-.372l.254.145V16a1 1 0 112 0v.277l.254-.145a1 1 0 11.992 1.736l-1.735.992a.995.995 0 01-1.022 0l-1.735-.992a1 1 0 01-.372-1.364z" clip-rule="evenodd" />'
                     +'</svg>'
-                    
-                    +'<div style="margin-left:-10px;margin-top:100px;">'
-                        +'<h4  style="text-transform:capitalize;margin-left:10px;margin-top:-90px;overflow: hidden;font-size:15px;font-weight:bold;">'
-                        +'<a class="loadEdge" onclick="loadEdge(this)" id="'+data.msg[i].billboard_id+'" href="#" style="text-transform: capitalize;">'+data.msg[i].billboard_name+'</a></h4>'
+
+                    +'<div style="margin-left:-10px;margin-top:10px;">'
+                    +'<h4 id="'+data.msg[i].billboard_id+'" class="loadEdge" onclick="loadEdge(this)" style="text-transform:capitalize;margin-left:10px;margin-top:0px;overflow: hidden;font-size:15px;font-weight:bold;">'
+                    +data.msg[i].billboard_name+'</h4>'
+                    +'<ul class="navbar-nav ml-auto navbar-list align-items-center" style="margin-left:100%;margin-top:-15px;">'  
+                        +'<li class="nav-item nav-icon dropdown caption-content pl-2 ml-2">'
+                            +'<a href="#"  id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
+                                +'<div class="d-flex align-items-center">'
+                                    +'<i class="las la-ellipsis-v" style="font-size:24px;color:#062B78;"></i>'
+                                +'</div>'
+                            +'</a>'
+                            +'<div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-left: -65px;">'
+                                +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-top:0px;width:100px;" title="Daily Views">'
+                                    +'<i class="las la-eye" style="font-size:24px;"></i>'
+                                    +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_daily_views+'</p>'
+                                +'</div>'
+
+                                +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="width:100px;" title="Billboard Provider">'
+                                 +'<i class="las la-border-style" style="font-size:24px;"></i>'
+                                    +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_owner_name+'</p>'
+                                +'</div>'
+                            
+                            +'</div>'
+                        +'</li>'
+                    +'</ul>'
                     +'</div>'
-                    
-                    +'<div style="margin-left:155px;margin-top:-140px;">'
-                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-top:0px;" title="Daily Views">'
-                        +'<i class="las la-eye" style="font-size:24px;"></i>'
-                        +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_daily_views+'</p>'
-                        +'</div>'
-                    
-                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:0px;margin-top:-5px;" title="Channels">'
-                        +'<i class="las la-border-none" style="font-size:24px;"></i>'
-                        +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_screen_count+'</p>'
-                        +'</div>'
-                    
-                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:0px;margin-top:-5px;" title="Traffic Direction">'
-                        +'<i class="las la-compass" style="font-size:24px;"></i>'
-                        +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_traffic_direction+'</p>'
-                        +'</div>'
-                    +'</div>'
-                    +'<div style="margin-left:-120px;margin-top:50px;">'
+
+                    +'<div style="margin-left:-120px;margin-top:65px;">'
+
                         +'<div id="'+data.msg[i].billboard_id+'" onclick="loadEdge(this)" class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:108px;margin-top:-50px;" title="Select Billboard">'
                         +'<i id="select_'+data.msg[i].billboard_id+'" class="las la-check-circle" style="font-size:24px;color:green;"></i>'
                         +'<p style="font-size:12px;margin-top:-25px;color:green;">Select</p>'
                         +'</div>'
-                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
+
+                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:150px;margin-top:-50px;width:72px;" title="Status">'
                         +'<i class="las la-check-double" style="font-size:24px;"></i>'
                         +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_availability+'</p>'
                         +'</div>'
-                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:235px;margin-top:-50px;width:42px;" title="Billboard Size" >'
+
+                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:205px;margin-top:-50px;width:84px;" title="Billboard Size" >'
                         +'<i class="las la-border-style" style="font-size:24px;"></i>'
                         +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_width+'x'+data.msg[i].billboard_height+'</p>'
                         +'</div>'
+
+                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:280px;margin-top:-50px;" title="Traffic Direction" >'
+                        +'<i class="las la-compass" style="font-size:24px;"></i>'
+                        +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_traffic_direction+'</p>'
+                        +'</div>'
+
+                        +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:320px;margin-top:-50px;" title="Channels">'
+                        +'<i class="las la-border-none" style="font-size:24px;"></i>'
+                        +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.msg[i].billboard_screen_count+'</p>'
+                        +'</div>'
+                        
                     +'</div>'
                     
                     +'</div>';
                 }
+                
                 $('#load-billboards-results').html(result);
                 $(".loadEdge:last").click();
                 document.getElementById('b-loader').style.display = 'none';
@@ -163,6 +183,41 @@ $(document).ready(function() {
     $('#customRange2').on('change', function(){
         screen_count = $(this).val();
         $('#edge_screen_count').html($(this).val());
+        $.ajax({
+            method: "POST",
+            url: ip_address+'/api/billboard/device/status',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify({'bid':  window.localStorage.getItem('dvd') , 'baid' : uid ,'screen':$(this).val()}),
+            dataType: "json",
+            success: function(data) {
+                if (data.status==200){
+                    var n  = '';
+                    n +='<div   class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin:20px;" title="'+data.msg+'">'
+                    +'<i class="las la-check-circle" style="font-size:64px;color:green;font-weight:bold;"></i>'
+                    +'<p style="font-size:12px;color:green;font-weight:bold;width:100px;margin-left:-20px;">Success</p>'
+                    +'</div>';
+                    $("#edge_status").attr("data-message", n);
+                    $('#edge_status').click();
+                    document.getElementById('b-loader').style.display = 'none';
+                }
+            },
+            statusCode: {
+                400: function(data) {
+                    var n = '';
+                    n +='<div   class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin:20px;">'
+                    +'<i class="las la-exclamation-triangle" style="font-size:64px;color:red;font-weight:bold;"></i>'
+                    +'<p style="font-size:12px;color:red;font-weight:bold;width:200px;margin-left:-75px;">Failure</p>'
+                    +'</div>'
+                    $("#edge_status").attr("data-message", n);
+                    $('#edge_status').click();
+                    document.getElementById('b-loader').style.display = 'none';
+                }
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
+        //UPDATE SCREEN COUNT
     });
     
     $("#customSwitch-11").on('change', function(){
@@ -223,7 +278,7 @@ $(document).ready(function() {
                                     +'<i class="las la-power-off" style="font-size:24px;color:green;font-weight:bold;"></i>'
                                     +'<p style="font-size:12px;margin-top:-25px;color:green;font-weight:bold;">On</p>'
                                     +'</div>'
-                                    +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
+                                    +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:72px;" title="Status">'
                                     +'<i class="las la-check-double" style="font-size:24px;"></i>'
                                     +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.banner[0].billboard_availability+'</p>'
                                     +'</div>'
@@ -274,7 +329,7 @@ $(document).ready(function() {
                                     +'<i class="las la-power-off" style="font-size:24px;color:red;font-weight:bold;"></i>'
                                     +'<p style="font-size:12px;margin-top:-25px;color:red;font-weight:bold;">Off</p>'
                                     +'</div>'
-                                    +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
+                                    +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:72px;" title="Status">'
                                     +'<i class="las la-check-double" style="font-size:24px;"></i>'
                                     +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.banner[0].billboard_availability+'</p>'
                                     +'</div>'
@@ -326,7 +381,7 @@ $(document).ready(function() {
                                 +'<i class="las la-exclamation-triangle" style="font-size:24px;color:red;font-weight:bold;"></i>'
                                 +'<p style="font-size:12px;margin-top:-25px;color:red;font-weight:bold;">Error</p>'
                                 +'</div>'
-                                +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:52px;" title="Status">'
+                                +'<div class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin-left:165px;margin-top:-50px;width:72px;" title="Status">'
                                 +'<i class="las la-check-double" style="font-size:24px;"></i>'
                                 +'<p style="font-size:12px;margin-top:-25px;color:green;">'+data.banner[0].billboard_availability+'</p>'
                                 +'</div>'
@@ -415,6 +470,7 @@ function loadEdge(addressPoints) {
                     $("#views").html(data.msg[0].billboard_daily_views);
                     $("#duration").html(data.msg[0].billboard_duration);
                     $("#name").html(data.msg[0].billboard_name);
+                    $("#agency_name").html(data.msg[0].billboard_owner_name);
                     $("#availability").html(data.msg[0].billboard_availability);
                     $("#sign_placement").html(data.msg[0].billboard_sign_placement);
                     $("#traffic_direction").html(data.msg[0].billboard_traffic_direction);
@@ -422,10 +478,23 @@ function loadEdge(addressPoints) {
                     $('#billboard-pic').attr({src: data.msg[0].billboard_image});
                     $('#customRangem2').val(data.msg[0].billboard_screen_count);
                 }
+                var n  = '';
+                n +='<div   class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin:20px;" title="'+data.msg+'">'
+                +'<i class="las la-check-circle" style="font-size:64px;color:green;font-weight:bold;"></i>'
+                +'<p style="font-size:12px;color:green;font-weight:bold;width:100px;margin-left:-20px;">Success</p>'
+                +'</div>';
+                $("#edge_status").attr("data-message", n);
+                $('#edge_status').click();
                 $('#locations').click();
             }
             if (data.status!=200){
-                console.log(data.msg);
+                var n = '';
+                n +='<div   class="icon iq-icon-box-2 edit-button bg-white  rounded" style="margin:20px;">'
+                +'<i class="las la-exclamation-triangle" style="font-size:64px;color:red;font-weight:bold;"></i>'
+                +'<p style="font-size:12px;color:red;font-weight:bold;width:200px;margin-left:-75px;">Failure</p>'
+                +'</div>'
+                $("#edge_status").attr("data-message", n);
+                $('#edge_status').click();
             }
         },
         statusCode: {
