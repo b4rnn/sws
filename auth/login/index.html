@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>SWS | Login</title>
+      <title>stroberi | login</title>
       
       <!-- Favicon -->
       <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
@@ -33,22 +33,20 @@
             <div class="row align-items-center justify-content-center height-self-center">
                <div class="col-lg-8">
                   <!--NOTIFICATION BEGIN-->
-                  <div class="alert alert-success" role="alert" >
-                     <div class="iq-alert-icon">
-                        <i class="ri-alert-line"></i>
-                     </div>
-                     <div class="iq-alert-text" id="logInmsgcnt">Stroberi <b>Web</b> Services—SWS!</div>
-                  </div>
+                  
                   <!-- NOTIFICATION -- END -->
                   <div class="card auth-card">
                      <div class="card-body p-0">
-                        <div class="d-flex align-items-center auth-content">
-                           <div class="col-lg-6 align-self-center">
-                              <div class="p-3">
-                                 <h2 class="mb-2">Sign In</h2>
-                                 <p>Login to stay connected.</p>
+                        <div class="d-flex justify-content-center">
+                           <div class="col-lg-6 d-flex justify-content-center">
+                              <div class="p-3 ">
+                                 
+                                 <div class="alert alert-success " role="alert" >
+                                    
+                                    <div class="iq-alert-text justify-content-center" > <b>Stroberi</b></div>
+                                 </div>
                                  <form id="loginForm">
-                                    <div class="row">
+                                    <div class="row ">
                                        <div class="col-lg-12">
                                           <div class="floating-label form-group">
                                              <input class="floating-input form-control" type="email" placeholder=" " id="logInEmail" pattern=".+@stroberigroup\.com" size="30" required>
@@ -61,26 +59,13 @@
                                              <label>Password</label>
                                           </div>
                                        </div>
-                                       <div class="col-lg-6">
-                                          <div class="custom-control custom-checkbox mb-3">
-                                             <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                             <label class="custom-control-label control-label-1" for="customCheck1">Remember Me</label>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6">
-                                          <a href="../recovery/" class="text-primary float-right mb-lg-0 mb-3">Forgot Password?</a>
-                                       </div>
                                     </div>
-                                    <button type="submit" id="logInbtn" class="btn btn-primary">Sign In</button>
-                                    <p class="mt-3">
-                                       Create an Account <a href="../register/" class="text-primary">Sign Up</a>
-                                    </p>
+                                    <button type="submit" id="logInbtn" class="btn btn-primary ">Sign In</button>
                                  </form>
                               </div>
                            </div>
-                           <div class="col-lg-6 content-right">
-                              <img src="../../assets/images/login/sign-in.png" class="img-fluid image-right" alt="">
-                           </div>
+                           <!--NOTIFICATION-->
+                           <a href="#" class="btn btn-sm btn-primary line-height rounded" style="display: none;" data-toggle="alert" data-message="Enabled successfully" id="logInmsgcnt" ></a>
                         </div>
                      </div>
                   </div>
